@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="한국어" />
+	</tags>
+	<strings>
+
+		<!-- Releasing translations separate from the main mod without my permission are not allowed. -->
+
+		<!-- General -->
+		<string id="LTE00000" text="및" />
+
+		<!-- Vendors -->
+		<string id="LTE00301" text="에드릭" />
+		<string id="LTE00302" text="잉에보르그" />
+		<string id="LTE00303" text="아산" />
+		<string id="LTE00304" text=" 책장수" />
+		<string id="LTE00305" text="에드릭은 제국 출신이지만 북부 사람인 척하는 중년의 책장수입니다. 키가 작고 늘 수도사 옷을 입고 다니며, 듣기 좋은 목소리로 말하고 더없이 공손합니다. 하지만 마치 누군가에게서 숨어 다니는 듯 늘 조심스럽고 신중한, 수수께끼 같은 인물이기도 합니다. 그의 과거는 비밀에 싸여 있으며, 주변 사람들에게 자신에 대해 많은 것을 드러내지 않습니다. 그럼에도 그는 문학에 대한 해박한 지식과 흠잡을 데 없는 손님 응대로 널리 알려져 있습니다." />
+		<string id="LTE00306" text="잉에보르그는 노드 출신의 젊고 키가 큰 금발 처녀로, 제 몸 하나는 지킬 줄 압니다. 군인 출신인 아버지에게서 싸우는 법을 배웠고, 어머니에게서는 문학에 대한 열정을 물려받았습니다. 그녀는 여러 곳을 떠돌며 책을 팔고, 길에서는 익힌 솜씨로 스스로를 지킵니다. 강인한 겉모습과 달리 마음씨가 따뜻하며, 문학에 대한 폭넓은 지식으로 이름나 있습니다." />
+		<string id="LTE00307" text="남쪽 마을 출신의 노인 아산은 예로부터 불같은 성미로 유명했습니다. 거친 성격에도 불구하고 책을 깊이 사랑하여 존경받는 책장수가 되었습니다. 나이가 들수록 아산은 점점 더 고립되었고, 세상을 막는 방패로 삼듯 책 속으로 숨어들었습니다. 괴팍한 성미에도 불구하고, 그는 지식과 문학에 대한 헌신으로 존경을 받았습니다." />
+
+		<!-- Books/Scrolls -->
+		<string id="LTE00401" text="책: 검과 방패 연구" />
+		<string id="LTE00402" text="책: 양손 도끼 안내서" />
+		<string id="LTE00403" text="책: 창의 역사" />
+		<string id="LTE00404" text="책: 궁수의 정확성" />
+		<string id="LTE00405" text="책: 석궁 연대기" />
+		<string id="LTE00406" text="책: 투척 무기 통달" />
+		<string id="LTE00407" text="책: 군마 다루는 법" />
+		<string id="LTE00408" text="책: 전사를 위한 운동 안내서" />
+		<string id="LTE00409" text="책: 장엄한 대장간" />
+		<string id="LTE00410" text="책: 진정한 정찰병" />
+		<string id="LTE00411" text="책: 지휘관의 전술" />
+		<string id="LTE00412" text="책: 그림자 속에서" />
+		<string id="LTE00413" text="책: 매력적인 대화" />
+		<string id="LTE00414" text="책: 영주를 위한 통솔의 지혜" />
+		<string id="LTE00415" text="책: 길드 상업 지침서" />
+		<string id="LTE00416" text="책: 효율적인 자원 관리" />
+		<string id="LTE00417" text="책: 외과의의 기록부" />
+		<string id="LTE00418" text="책: 공학 건축 연감" />
+		<string id="LTE00419" text="두루마리: 강철 검 이야기" />
+		<string id="LTE00420" text="두루마리: 워해머 기록" />
+		<string id="LTE00421" text="두루마리: 글레이브 안내서" />
+		<string id="LTE00422" text="두루마리: 활과 화살 소책자" />
+		<string id="LTE00423" text="두루마리: 석궁 개론" />
+		<string id="LTE00424" text="두루마리: 다트와 투창 일지" />
+		<string id="LTE00425" text="두루마리: 기병 연대기 기록집" />
+		<string id="LTE00426" text="두루마리: 체력 우화집" />
+		<string id="LTE00427" text="두루마리: 도검 제작 요약" />
+		<string id="LTE00428" text="두루마리: 길잡이의 기록" />
+		<string id="LTE00429" text="두루마리: 전투 전술 필사본" />
+		<string id="LTE00430" text="두루마리: 악당의 회고록" />
+		<string id="LTE00431" text="두루마리: 카리스마의 기술" />
+		<string id="LTE00432" text="두루마리: 통솔의 교훈" />
+		<string id="LTE00433" text="두루마리: 상인의 회고록" />
+		<string id="LTE00434" text="두루마리: 관리인의 장부" />
+		<string id="LTE00435" text="두루마리: 치료법과 조제법" />
+		<string id="LTE00436" text="두루마리: 축성 공식" />
+
+		<!-- Menus / IM / Popups -->
+		<string id="LTE00500" text="글 배우기" />
+		<string id="LTE00501" text="아무도 당신에게 글을 가르치려 하지 않습니다. 가망이 없다고 생각하는군요... (지능 &lt; {MIN_INT})" />
+		<string id="LTE00502" text="시간당 {READ_PRICE}{GOLD_ICON}에 글을 가르쳐 주겠다는 학자를 찾았습니다." />
+		<string id="LTE00503" text="시작해 봅시다!" />
+		<string id="LTE00504" text="떠난다" />
+		<string id="LTE00505" text="다음 기회에..." />
+		<string id="LTE00506" text="학자는 먼저 알파벳의 개념과 각 글자가 내는 소리를 소개합니다. 이어서 기초적인 단어로 넘어가 발음하는 법과 문맥 속에서 읽는 법을 가르칩니다. 학자는 글을 정확히 읽고 이해하려면 발음과 또렷한 발성이 중요하다고 강조합니다." />
+		<string id="LTE00507" text="{READ_PAID}{GOLD_ICON} 지불함" />
+		<string id="LTE00508" text="배움을 계속할 금화가 부족합니다..." />
+		<string id="LTE00509" text="오늘은 여기까지" />
+		<string id="LTE00510" text="마을 사람들이 어리둥절한 표정을 짓습니다. 자기들끼리 잠시 이야기를 나누더니, 그중 가장 똑똑해 보이는 사람이 도시 쪽을 가리킵니다..." />
+		<string id="LTE00511" text="주민들이 난감한 표정을 짓습니다. 머리를 긁적이더니 도시로 가 보라고 권합니다..." />
+		<string id="LTE00512" text="학업 관리" />
+		<string id="LTE00513" text="현재 읽는 중: {newline}{newline}{READING_DATA}" />
+		<string id="LTE00514" text="현재 아무것도 읽고 있지 않습니다." />
+		<string id="LTE00515" text="읽을 것 선택" />
+		<string id="LTE00516" text="읽어 볼 만한 좋은 책 같습니다" />
+		<string id="LTE00517" text="이미 읽은 책입니다." />
+		<string id="LTE00518" text="이제부터 읽을 책:" />
+		<string id="LTE00519" text="선택" />
+		<string id="LTE00520" text="읽을 책: " />
+		<string id="LTE00521" text="아무것도 읽지 않기로 한다" />
+		<string id="LTE00522" text="이제 글을 읽을 수 있습니다!" />
+		<string id="LTE00523" text="당신이 글을 깨쳤다는 사실을 온 세상에 알리십시오!" />
+		<string id="LTE00524" text="전에 읽던 책이 없습니다..." />
+		<string id="LTE00525" text="읽는 중: {READING_DATA}" />
+		<string id="LTE00526" text="{FINISHED_BOOK} 독서를 마쳤습니다!" />
+		<string id="LTE00527" text="{BOOK_SKILL} 기술이 {BOOK_SKILL_INC} 올랐습니다!" />
+		<string id="LTE00528" text="{BOOK_SKILL} 기술이 이미 너무 높아서,{newline} 이 책은 시간 낭비였습니다..." />
+		<string id="LTE00529" text="독서 완료" />
+		<string id="LTE00530" text="계속" />
+		<string id="LTE00531" text=" [읽음]" />
+		<string id="LTE00532" text="읽기 시작" />
+		<string id="LTE00533" text="초급" />
+		<string id="LTE00534" text="중급" />
+		<string id="LTE00535" text="상급" />
+		<string id="LTE00536" text="전문가" />
+		<string id="LTE00537" text="학자 만나기" />
+		<string id="LTE00538" text="이곳에는 학자가 없습니다..." />
+		<string id="LTE00539" text="아마 선술집 주인이 도와줄 수 있을 겁니다..." />
+		<string id="LTE00540" text="{SCHOLAR_NAME}{newline}{newline}{SKILL_NAME} 훈련 제공 ({SCHOLAR_LEVEL}){newline}{newline}가격: {SCHOLAR_PRICE}{GOLD_ICON}/시간  기간: {TRAINING_DURATION}시간" />
+		<string id="LTE00541" text="누가 참여합니까?" />
+		<string id="LTE00542" text="최근에 훈련함, 휴식 필요" />
+		<string id="LTE00543" text="훈련할 인원 선택" />
+		<string id="LTE00544" text="참가자 {PARTICIPANT_NUMBER}명 기준 1인당 가격 {PERSON_PRICE}.{newline}{newline}총 가격: {TOTAL_PRICE}" />
+		<string id="LTE00545" text="다시 오겠습니다..." />
+		<string id="LTE00546" text="훈련을 시작합니까?" />
+		<string id="LTE00547" text="{SCHOLAR_NAME}이(가) {SKILL_NAME} 훈련을 시작할 준비가 되었습니다.{newline}{newline}참가자 {PARTICIPANT_NUMBER}명의 훈련 비용은 {TOTAL_PRICE}입니다.{newline}{newline}진행하시겠습니까?" />
+		<string id="LTE00548" text="{SCHOLAR_NAME}({SKILL_NAME} {SCHOLAR_LEVEL})의 훈련" />
+		<string id="LTE00549" text="마음이 바뀌었습니다..." />
+		<string id="LTE00550" text="중단" />
+		<string id="LTE00551" text="참가자들의 집중력이 부족하여 훈련의 질이 떨어졌습니다..." />
+		<string id="LTE00552" text="훈련 완료" />
+		<string id="LTE00553" text="참여 가능한 모든 부대원" />
+		<string id="LTE00554" text="참여 불가 - 부상" />
+		<string id="LTE00555" text="글을 읽을 줄 모릅니다..." />
+		<string id="LTE00556" text="- 다음에 읽을 책:" />
+		<string id="LTE00557" text="읽는 중" />
+		<string id="LTE00558" text="책" />
+		<string id="LTE00559" text="두루마리" />
+		<string id="LTE00560" text="읽기" />
+		<string id="LTE00561" text="{BOOK_NAME}을(를) 읽으면 {SKILL_NAME} 기술이 오릅니다." />
+		<string id="LTE00562" text="현재 아무것도 읽고 있지 않습니다." />
+		<string id="LTE00563" text="부대의 책 보관함" />
+		<string id="LTE00564" text="읽기 중단" />
+		<string id="LTE00565" text="부대에 책이 없습니다" />
+		<string id="LTE00566" text="부대에 두루마리가 없습니다" />
+		<string id="LTE00567" text="글을 읽을 줄 모름" />
+		<string id="LTE00568" text="글 배우는 중" />
+		<string id="LTE00569" text="책 보관함" />
+		<string id="LTE00570" text="글을 배우려면 지능 {MIN_INT} 필요." />
+		<string id="LTE00571" text="곧 글을 배우기 시작합니다." />
+		<string id="LTE00572" text="도시에서 학자를 찾아 글을 배우십시오." />
+		<string id="LTE00573" text="쉽지 않고 시간이 걸리는 일입니다..." />
+		<string id="LTE00574" text="읽을 책이나 두루마리를 선택하십시오." />
+		<string id="LTE00575" text="상인에게서 책이나 두루마리를 사서 읽으십시오." />
+		<string id="LTE00576" text="{HERO_NAME}이(가) 글을 깨쳤습니다!" />
+		<string id="LTE00577" text="{HERO_NAME}이(가) {BOOK_NAME} 독서를 마쳤습니다" />
+		<string id="LTE00578" text="{HERO_NAME}: {BOOK_SKILL} 기술이 {BOOK_SKILL_INC} 올랐습니다" />
+		<string id="LTE00579" text="다음 책 자동 선택" />
+		<string id="LTE00580" text="동료가 현재 책을 다 읽으면 다음에 읽을 책을 자동으로 선택합니다" />
+		<string id="LTE00581" text="글을 읽을 수 있음!" />
+
+		<!-- ==================== Dialogs ==================== -->
+
+		<!-- Eadric-Male Welcome -->
+		<string id="LTE01000" text="좋은 아침입니다, 나리! 저의 보잘것없는 가판대에 오신 것을 환영합니다." />
+		<string id="LTE01001" text="안녕하십니까, 선량한 나리! 제가 내놓은 문학의 보물들을 마음껏 둘러보십시오." />
+		<string id="LTE01002" text="반갑습니다, 친구여! 온 땅에서 가장 훌륭한 책들을 모은 이곳에 오신 것을 진심으로 환영합니다." />
+		<string id="LTE01003" text="귀하신 나리께 인사 올립니다! 제 책들이 품은 보물을 얼마든지 둘러보십시오." />
+		<string id="LTE01004" text="어서 오십시오, 나리! 제가 고른 서적들을 살펴봐 주신다니 영광입니다." />
+		<string id="LTE01005" text="안녕하십니까, 친절하신 나리! 지식과 경이가 기다리는 저의 소박한 가판대에 오신 것을 환영합니다." />
+		<string id="LTE01006" text="좋은 하루입니다, 선량한 양반! 제 책들이 드리는 지식과 즐거움을 마음껏 누리십시오." />
+		<string id="LTE01007" text="존경하는 손님께 인사 올립니다! 저의 훌륭한 문학 소장품을 소개해 드리게 되어 기쁩니다." />
+		<string id="LTE01008" text="반갑습니다, 나리! 나리를 기다리는 문학의 즐거움을 둘러보십시오." />
+		<string id="LTE01009" text="안녕하십니까, 친애하는 나리! 풍부한 지식과 지혜가 가득한 저의 가판대에 모시게 되어 영광입니다." />
+
+		<!-- Eadric-Female Welcome -->
+		<string id="LTE01010" text="좋은 아침입니다, 마님! 저의 보잘것없는 가판대에 오신 것을 환영합니다." />
+		<string id="LTE01011" text="안녕하십니까, 고운 아가씨! 제가 내놓은 문학의 보물들을 마음껏 둘러보십시오." />
+		<string id="LTE01012" text="반갑습니다, 아가씨! 온 땅에서 가장 훌륭한 책들을 모은 이곳에 오신 것을 진심으로 환영합니다." />
+		<string id="LTE01013" text="귀하신 마님께 인사 올립니다! 제 책들이 품은 보물을 얼마든지 둘러보십시오." />
+		<string id="LTE01014" text="어서 오십시오, 고운 아가씨! 제가 고른 서적들을 살펴봐 주신다니 영광입니다." />
+		<string id="LTE01015" text="안녕하십니까, 친절하신 아가씨! 지식과 경이가 기다리는 저의 소박한 가판대에 오신 것을 환영합니다." />
+		<string id="LTE01016" text="좋은 하루입니다, 친애하는 아가씨! 제 책들이 드리는 지식과 즐거움을 마음껏 누리십시오." />
+		<string id="LTE01017" text="존경하는 손님께 인사 올립니다, 마님! 저의 훌륭한 문학 소장품을 소개해 드리게 되어 기쁩니다." />
+		<string id="LTE01018" text="반갑습니다, 고운 아가씨! 아가씨를 기다리는 문학의 즐거움을 둘러보십시오." />
+		<string id="LTE01019" text="안녕하십니까, 친애하는 아가씨! 풍부한 지식과 지혜가 가득한 저의 가판대에 모시게 되어 영광입니다." />
+
+		<!-- Ingeborg-Male Welcome -->
+		<string id="LTE01020" text="어서 오세요, 나리! 기사도에 관한 책은 어떠세요? 나리처럼 멋진 기사님께 딱 어울릴 것 같은데요." />
+		<string id="LTE01021" text="안녕하세요, 나리! 나리께서 와 주신 덕분에 오늘 하루가 햇살보다 더 밝아졌어요." />
+		<string id="LTE01022" text="나리, 오늘은 별들이 제 편인가 봐요. 나리처럼 늠름한 분을 만나는 기쁨을 누리게 되었으니까요." />
+		<string id="LTE01023" text="나리를 뵙게 된 오늘은 축복받은 날이에요. 오늘은 무엇을 도와드릴까요?" />
+		<string id="LTE01024" text="좋은 하루예요, 친절한 나리! 제 책장들이 나리의 미소만큼 매력적이면 좋을 텐데요." />
+		<string id="LTE01025" text="이렇게 안목 있고 품위 있는 분이 제 소박한 책들을 둘러보시다니, 정말 기뻐요." />
+		<string id="LTE01026" text="나리는 분명 학자이시군요. 제 책의 아름다움을 이토록 알아보시는 건 대단한 지성을 지닌 분뿐이니까요." />
+		<string id="LTE01027" text="아는 것이 힘이라고들 하지만, 진짜 힘은 나리처럼 잘생긴 신사분과 함께하는 데 있다고 생각해요." />
+		<string id="LTE01028" text="고백하자면요, 나리. 나리 같은 분이 제 작은 책방을 찾아 주시길 꽤 오래 기다려 왔답니다." />
+		<string id="LTE01029" text="이 작은 구석까지 찾아오신 걸 보니 대단한 안목을 지니셨군요. 나리의 낭만적인 성품에 어울리는 궁정 연애에 관한 책은 어떠세요?" />
+
+		<!-- Ingeborg-Female Welcome -->
+		<string id="LTE01030" text="어서 오세요, 고운 아가씨! 아가씨의 아름다움과 매력 덕분에 제 소박한 책방이 빛나네요." />
+		<string id="LTE01031" text="이토록 기품 있고 우아한 분을 모시게 되어 영광이에요. 아가씨의 낭만적인 성품에 어울리는 궁정 연애에 관한 책은 어떠세요?" />
+		<string id="LTE01032" text="아가씨, 그 눈부신 모습에 넋을 잃고 말았어요. 아가씨의 총명함에 어울리는 완벽한 책을 찾도록 도와드릴게요." />
+		<string id="LTE01033" text="아가씨처럼 안목 높은 분은 정말 드물어요. 제 책들 속 보물을 어서 보여 드리고 싶네요." />
+		<string id="LTE01034" text="아가씨 같은 분이 제 책방에 와 주시다니 정말 기뻐요! 이 땅에서 손꼽히는 훌륭한 책들을 소개해 드릴게요." />
+		<string id="LTE01035" text="아가씨, 아가씨가 오시니 상쾌한 바람이 부는 것 같아요. 아가씨의 시적인 아름다움에 어울리는 시집은 어떠세요?" />
+		<string id="LTE01036" text="아가씨처럼 우아하고 기품 있는 분은 처음 봐요. 아가씨의 세련됨에 어울리는 완벽한 책을 찾도록 도와드릴 수 있다면 영광이에요." />
+		<string id="LTE01037" text="아가씨는 분명 대단한 지성과 지혜를 지닌 분이군요. 그 예리한 정신에 어울리는 철학이나 신학 책은 어떠세요?" />
+		<string id="LTE01038" text="아가씨, 그 매력과 카리스마에 푹 빠지고 말았어요. 이 문학 여행의 길잡이가 되어 드릴게요." />
+		<string id="LTE01039" text="이토록 아름답고 총명한 분이 제 소박한 책방에 오시다니 정말 기뻐요. 아가씨의 지식과 지혜에 어울리는 역사책은 어떠세요?" />
+
+		<!-- Ahsan-Male Welcome -->
+		<string id="LTE01040" text="뭘 원하나, 이 건달아? 빨리 말해. 네 헛소리나 듣고 있을 만큼 한가하지 않으니까." />
+		<string id="LTE01041" text="누가 내 휴식을 방해하는 거냐? 용건을 말하든지 꺼지든지 해라. 개를 풀기 전에." />
+		<string id="LTE01042" text="무슨 일로 내 가게에 왔느냐, 이 비렁뱅이야? 돈 얘기라면 값은 선불이다." />
+		<string id="LTE01043" text="똑바로 말해. 쓸데없는 잡담으로 내 시간을 뺏는 놈들은 못 참으니까. 원하는 게 뭐냐?" />
+		<string id="LTE01044" text="뭘 찾는 거냐, 나그네? 빨리 말해. 시간이 갈수록 내 성질이 바닥나고 있으니." />
+		<string id="LTE01045" text="그래, 낯선 이여. 나한테 무슨 볼일이냐? 짧게 해라. 지금은 누구와 어울릴 기분이 아니니까." />
+		<string id="LTE01046" text="누가 감히 내 평온을 깨느냐? 할 말이 있으면 하고, 없으면 날 내버려 둬라." />
+		<string id="LTE01047" text="무슨 일로 내 문 앞에 왔느냐, 이 바보야? 용건을 말해라. 아니면 경비병을 불러 끌어내게 할 테니." />
+		<string id="LTE01048" text="그래, 나그네. 용건을 말하든지 갈 길을 가라. 정처 없이 떠도는 자들은 참아 줄 수 없다." />
+		<string id="LTE01049" text="뭘 원하나, 이 촌놈아? 인사치레할 기분 아니다. 빨리 말하고 가 버려." />
+
+		<!-- Ahsan-Female Welcome -->
+		<string id="LTE01050" text="뭘 원하나, 이 계집아? 빨리 말해. 잡담할 시간 없으니까." />
+		<string id="LTE01051" text="네가 뭔데 날 방해하느냐? 용건을 말해라. 아니면 그 대가를 치를 줄 알아." />
+		<string id="LTE01052" text="무슨 일로 내 문 앞에 왔느냐, 처자? 돈 얘기라면 제값을 치를 각오나 해라." />
+		<string id="LTE01053" text="똑바로 말해. 주절주절 떠드는 자들은 못 참으니까. 원하는 게 뭐냐?" />
+		<string id="LTE01054" text="뭘 찾느냐, 여인? 빨리 말해. 나는 더 중요한 일이 있으니까." />
+		<string id="LTE01055" text="그래, 아가씨. 나한테 무슨 볼일이냐? 짧게 해라. 내 시간은 귀하니까." />
+		<string id="LTE01056" text="누가 감히 내 고독을 방해하느냐? 할 말이 있으면 하고, 없으면 갈 길을 가라." />
+		<string id="LTE01057" text="무슨 일로 여기 왔느냐, 계집애야? 용건을 말해라. 아니면 내 분노를 맛보게 될 거다." />
+		<string id="LTE01058" text="그래, 나그네. 뭘 찾느냐? 빨리 말하고 갈 길을 가라." />
+		<string id="LTE01059" text="뭘 원하나, 이 화냥년아? 네 장난에 어울릴 시간 없다. 용건을 말하고 꺼져." />
+
+		<!-- Eadric-Male Bye -->
+		<string id="LTE01060" text="안녕히 가십시오, 나리! 저의 가판대를 찾아 주셔서 감사합니다." />
+		<string id="LTE01061" text="안녕히 가십시오, 벗이여! 제 책에서 얻으신 지식이 그대의 삶을 풍요롭게 하기를." />
+		<string id="LTE01062" text="안녕히 가십시오, 친애하는 나리! 지식을 찾는 나리의 여정을 도와드릴 수 있어 기뻤습니다." />
+		<string id="LTE01063" text="무사히 가십시오, 귀하신 나리! 작별 인사를 드리며 곧 다시 뵙기를 바랍니다." />
+		<string id="LTE01064" text="안녕히 가십시오, 선량한 양반! 찾아 주셔서 감사드리며, 안전한 여행이 되시길 빕니다." />
+		<string id="LTE01065" text="전능하신 분의 축복이 함께하기를, 친구여! 안녕히 가시고, 즐거운 독서 되십시오." />
+		<string id="LTE01066" text="부디 평안하십시오, 친절하신 나리! 구하신 책들이 큰 기쁨과 깨달음을 가져다주기를 바랍니다." />
+		<string id="LTE01067" text="지식에 대한 갈증이 결코 채워지지 않기를, 친애하는 나리! 안녕히 가시고, 찾으시는 것을 꼭 찾으십시오." />
+		<string id="LTE01068" text="안녕히 가십시오, 존경하는 손님! 나리를 모시고 책에 대한 사랑을 나눌 수 있어 영광이었습니다." />
+		<string id="LTE01069" text="안녕히 가십시오, 친애하는 나리! 제 책들이 오랜 시간 기쁨과 배움을 드리기를 바라며 작별을 고합니다." />
+
+		<!-- Eadric-Female Bye -->
+		<string id="LTE01070" text="안녕히 가십시오, 고운 아가씨! 저의 가판대를 찾아 주셔서 감사합니다." />
+		<string id="LTE01071" text="안녕히 가십시오, 친애하는 마님! 제 책에서 얻으신 지식이 마님의 삶을 풍요롭게 하기를." />
+		<string id="LTE01072" text="안녕히 가십시오, 존경하는 손님! 지식을 찾는 마님의 여정을 도와드릴 수 있어 기뻤습니다." />
+		<string id="LTE01073" text="무사히 가십시오, 귀하신 마님! 작별 인사를 드리며 곧 다시 뵙기를 바랍니다." />
+		<string id="LTE01074" text="안녕히 가십시오, 친절하신 아가씨! 찾아 주셔서 감사드리며, 안전한 여행이 되시길 빕니다." />
+		<string id="LTE01075" text="전능하신 분의 축복이 함께하기를, 친애하는 아가씨! 안녕히 가시고, 즐거운 독서 되십시오." />
+		<string id="LTE01076" text="부디 평안하십시오, 고운 아가씨! 구하신 책들이 큰 기쁨과 깨달음을 가져다주기를 바랍니다." />
+		<string id="LTE01077" text="지식에 대한 갈증이 결코 채워지지 않기를, 친애하는 아가씨! 안녕히 가시고, 찾으시는 것을 꼭 찾으십시오." />
+		<string id="LTE01078" text="안녕히 가십시오, 친애하는 아가씨! 아가씨를 모시고 책에 대한 사랑을 나눌 수 있어 영광이었습니다." />
+		<string id="LTE01079" text="안녕히 가십시오, 존경하는 손님! 제 책들이 오랜 시간 기쁨과 배움을 드리기를 바라며 작별을 고합니다." />
+
+		<!-- Ingeborg-Male Bye -->
+		<string id="LTE01080" text="안녕히 가세요, 나리! 곧 다시 들러 주세요. 문학과 사랑 이야기를 계속 나눌 수 있게요." />
+		<string id="LTE01081" text="다시 만날 때까지요, 나리. 나리의 머릿속이 지식으로 가득하듯 마음도 기쁨으로 가득하기를." />
+		<string id="LTE01082" text="늠름한 기사님을 모실 수 있어 즐거웠어요. 나리께서 제 소박한 책방에 다시 오실 날을 기다릴게요." />
+		<string id="LTE01083" text="안녕히 가세요, 나리. 나리의 여정이 그토록 열심히 읽으시는 책장처럼 밝고 보람차기를." />
+		<string id="LTE01084" text="다음에 또 봬요, 나리. 제 책에서 얻으신 지식이 하시는 모든 일에 보탬이 되기를." />
+		<string id="LTE01085" text="안녕히 가세요, 나리. 나리처럼 안목 있고 품위 있는 분께는 제 책방이 언제나 열려 있다는 걸 잊지 마세요." />
+		<string id="LTE01086" text="나리처럼 훌륭하고 기품 있는 분을 모실 수 있어 영광이었어요. 여행길이 안전하고, 제 책 속 글귀로 나리의 생각이 늘 넓어지기를." />
+		<string id="LTE01087" text="다시 만날 때까지요, 나리. 제 책 속의 아름다움과 지혜가 나리께 늘 영감이 되기를." />
+		<string id="LTE01088" text="나리의 매력적인 동행이 그리울 거예요. 제 책에서 배우신 교훈이 나리의 인생길에 큰 힘이 되기를." />
+		<string id="LTE01089" text="안녕히 가세요, 나리. 나리께서 여기 계셨던 기억은 제 정원의 장미 향기처럼 제 마음속에 오래 남을 거예요." />
+
+		<!-- Ingeborg-Female Bye -->
+		<string id="LTE01090" text="안녕히 가세요, 고운 아가씨! 고르신 책장들이 아가씨의 얼굴처럼 아름답고 깨달음을 주기를." />
+		<string id="LTE01091" text="다시 만날 때까지요, 아가씨. 제 책에서 얻으신 지식이 이미 반짝이는 아가씨의 지성을 더욱 빛내 주기를." />
+		<string id="LTE01092" text="이토록 우아하고 기품 있는 분을 모실 수 있어 즐거웠어요. 아가씨가 제게 주신 기쁨만큼 인생의 여정이 아가씨께 기쁨을 주기를." />
+		<string id="LTE01093" text="안녕히 가세요, 아가씨. 제 책 속의 낭만과 열정이 아가씨를 더 깊은 사랑과 헌신으로 이끌어 주기를." />
+		<string id="LTE01094" text="다음에 또 봬요, 아가씨. 제 책 속 글귀가 아가씨의 창의력과 영감에 계속 불을 지펴 주기를." />
+		<string id="LTE01095" text="안녕히 가세요, 고운 아가씨. 아가씨처럼 아름답고 안목 높은 분께는 제 책방이 언제나 열려 있다는 걸 잊지 마세요." />
+		<string id="LTE01096" text="아가씨를 모실 수 있어 영광이었어요. 제 책 속 교훈이 더 큰 지혜와 통찰로 아가씨의 인생길을 이끌어 주기를." />
+		<string id="LTE01097" text="다시 만날 때까지요, 아가씨. 제 책 속의 지식과 아름다움이 아가씨의 삶과 하시는 일에 늘 영감이 되기를." />
+		<string id="LTE01098" text="아가씨의 매력적인 동행이 그리울 거예요. 우리가 나눈 대화와 제 책 속 지식이 늘 아가씨께 위안이 되기를." />
+		<string id="LTE01099" text="안녕히 가세요, 아가씨. 아가씨의 아름답고 눈부신 모습은 밤하늘의 별빛처럼 제 마음속에 남을 거예요..." />
+
+		<!-- Ahsan-Male/Female Bye -->
+		<string id="LTE01100" text="썩 내 눈앞에서 사라져라, 이 역병 같은 쥐새끼야!" />
+		<string id="LTE01101" text="꺼져라, 이 더럽고 비열한 놈아!" />
+		<string id="LTE01102" text="악마가 너를 냉큼 데려가기를, 그것도 아주 빨리!" />
+		<string id="LTE01103" text="잘 가라. 하지만 다시는 내 가게에 오지 마라!" />
+		<string id="LTE01104" text="당장 나가라. 그리고 다시는 내 문턱을 넘지 마라!" />
+		<string id="LTE01105" text="지체 말고 떠나라. 내가 먼저 자리를 뜨기 전에." />
+		<string id="LTE01106" text="네놈과 있는 게 갈수록 지겹구나. 꺼져라, 당장!" />
+		<string id="LTE01107" text="경비병을 불러 끌어내기 전에 내 눈앞에서 사라져라!" />
+		<string id="LTE01108" text="네가 가는 길이 멀고 험난하기를, 그리고 쉴 곳도 찾지 못하기를!" />
+		<string id="LTE01109" text="네가 어디로 가든 상관없다. 나한테서 멀리 떨어지기만 하면!" />
+
+		<!-- Dialog-Other lines -->
+		<string id="LTE01200" text="무엇이 있는지 보고 싶소" />
+		<string id="LTE01201" text="지금은 더 필요한 게 없소. 잘 있으시오." />
+		<string id="LTE01202" text="거래해서 즐거웠습니다. [ib:hip][rb:positive][rf:happy]" />
+		<string id="LTE01203" text="필요한 건 다 찾으셨나요? [ib:hip][rb:positive][rf:happy]" />
+		<string id="LTE01204" text="이제 됐냐? [ib:hip][rb:negative][if:angry]" />
+		<string id="LTE01205" text="고맙소!" />
+		<string id="LTE01206" text="더 도와드릴 일이 있을까요? [ib:confident][if:convo_calm_friendly]" />
+		<string id="LTE01207" text="더 필요한 건 없으세요? [ib:confident][if:convo_calm_friendly]" />
+		<string id="LTE01208" text="또 뭐냐? [ib:hip][if:angry]" />
+		<string id="LTE01209" text="금화가 부족합니다..." />
+		<string id="LTE01210" text="구매: " />
+		<string id="LTE01211" text="판매: " />
+
+		<!-- Dialog-Tavern Keeper -->
+		<string id="LTE01300" text="그래, 최근에 {VENDOR.FIRSTNAME}을(를) 봤소. 도시를 둘러보시오." />
+		<string id="LTE01301" text="{SETTLEMENT}에 가면 찾는 걸 구할 수 있다고 들었소." />
+		<string id="LTE01302" text="아니, 요즘은 소식을 못 들었소." />
+		<string id="LTE01303" text="고맙소!" />
+		<string id="LTE01304" text="더 필요한 건 없소?" />
+		<string id="LTE01305" text="주인장, 책을 한 권 사고 싶은데 이 근처에서 책장수를 본 적이 있소? 최근에 이 가게를 거쳐 간 이가 있소?" />
+		<string id="LTE01306" text="실례하오, 친절한 주인장. 이 근방을 다니는 책장수 소식을 들은 적 있소? 새로 읽을거리를 찾고 있소." />
+		<string id="LTE01307" text="실례하오, 주인장. 나는 책을 사랑하는 사람인데 책장수를 찾고 있소. 최근에 그런 상인이 이 가게를 거쳐 갔소?" />
+		<string id="LTE01308" text="이보시오, 주인장. 책이 필요해서 근처에 상인이 있나 찾는 중이오. 요 며칠 사이에 그런 장사꾼을 본 적 있소?" />
+		<string id="LTE01309" text="안녕하시오, 주인장. 나는 책을 좋아해서 한 권 사려고 하오. 혹시 요즘 이곳을 거쳐 간 책장수를 아시오?" />
+		<string id="LTE01310" text="안녕하시오, 주인장. 책을 구하는 중인데 최근에 책장수를 만난 적이 있는지 궁금하오. 찾는 걸 도와준다면 정말 고맙겠소." />
+		<string id="LTE01311" text="주인장, 혹시 최근 이 근방에서 책장수를 본 사람이 있는지 알려 줄 수 있겠소? 소장품을 늘리고 싶어서 말이오." />
+		<string id="LTE01312" text="좋은 하루요, 주인장. 책이 필요해서 근처에 상인이 있나 찾는 중이오. 이 지역을 다니는 그런 상인 소식을 들은 적 있소?" />
+		<string id="LTE01313" text="잘 지내셨소, 주인장. 나는 열렬한 독서가인데 책장수를 찾고 있소. 최근에 그런 사람이 이 가게에 온 적 있소?" />
+		<string id="LTE01314" text="실례하오, 주인장. 나는 학자인데 새로 읽을거리가 필요하오. 요즘 이 근방에서 책장수를 본 적 있소?" />
+		<string id="LTE01315" text="주인장, 내 서재를 넓히고 싶은데 최근 이 지역에서 책장수를 본 적이 있소? 어떤 정보든 알려 주면 정말 고맙겠소." />
+		<string id="LTE01316" text="내 기술을 키우는 데 도움을 줄 만한 사람을 아시오?" />
+		<string id="LTE01317" text="다음 곳을 찾아보시오: " />
+		<string id="LTE01318" text="좋소! 지도에 표시해 두겠소." />
+
+		<!-- Smithing parts -->
+		<string id="LTE01400" text="{WEAPON_ICON} 새로운 무기 부품을 만드는 법을 배우고 싶소. 가르쳐 줄 수 있소?" />
+		<string id="LTE01401" text="오늘은 안 되오. 내일 오시오." />
+		<string id="LTE01402" text="좋소. 또 필요한 게 있소?" />
+		<string id="LTE01404" text="배울 부품을 선택하십시오:" />
+		<string id="LTE01405" text="선택됨: {PIECE_NAME}: {PRICE}{GOLD_ICON}" />
+		<string id="LTE01406" text="금화가 부족합니다. 총 가격: {PRICE}{GOLD_ICON}" />
+
+		<!-- Scholars -->
+		<string id="LTE01500" text="콕콕 부인" />
+		<string id="LTE01501" text="칼날 미인 부인" />
+		<string id="LTE01502" text="검술 악마" />
+		<string id="LTE01503" text="철갑" />
+		<string id="LTE01504" text="구멍숭숭 와트닉" />
+		<string id="LTE01505" text="짐승 시몬" />
+		<string id="LTE01506" text="뱀낯짝" />
+		<string id="LTE01507" text="안 쪼개지는 블로르그" />
+		<string id="LTE01508" text="푹푹 부인" />
+		<string id="LTE01509" text="창게르타" />
+		<string id="LTE01510" text="꿰뚫는 자 잉바르" />
+		<string id="LTE01511" text="음울한 그룸시" />
+		<string id="LTE01512" text="활의 로빈 경" />
+		<string id="LTE01513" text="독수리 눈 로나" />
+		<string id="LTE01514" text="여궁수 귀부인" />
+		<string id="LTE01515" text="말리크 알카우스" />
+		<string id="LTE01516" text="도크슨 피크" />
+		<string id="LTE01517" text="날쌘 맬컴" />
+		<string id="LTE01518" text="사냥꾼 이브" />
+		<string id="LTE01519" text="삐딱이 존" />
+		<string id="LTE01520" text="마빅 보그 카처" />
+		<string id="LTE01521" text="왼손잡이 벤주르" />
+		<string id="LTE01522" text="까마귀 눈" />
+		<string id="LTE01523" text="리 사부" />
+		<string id="LTE01524" text="등자와 씨름하는 부인" />
+		<string id="LTE01525" text="승마 명인 에드워드 경" />
+		<string id="LTE01526" text="강철 말의 이사벨라 부인" />
+		<string id="LTE01527" text="검은 기수" />
+		<string id="LTE01528" text="선의의 제스투로" />
+		<string id="LTE01529" text="후다닥 부인" />
+		<string id="LTE01530" text="불끈불끈 백작부인" />
+		<string id="LTE01531" text="바위 에드" />
+		<string id="LTE01532" text="쇠를 구부리는 존" />
+		<string id="LTE01533" text="구린돌 에드워드" />
+		<string id="LTE01534" text="용광로 심장 헨리" />
+		<string id="LTE01535" text="모루에서 태어난 니콜라스" />
+		<string id="LTE01536" text="호기심 많은 로라" />
+		<string id="LTE01537" text="추적자 지기" />
+		<string id="LTE01538" text="늪 사나이 스트럭" />
+		<string id="LTE01539" text="초록 사나이 익스탐네토프" />
+		<string id="LTE01540" text="패배자 보바" />
+		<string id="LTE01541" text="말상 보랄" />
+		<string id="LTE01542" text="몽땅가져 게르다" />
+		<string id="LTE01543" text="'웅덩이 너머' 겐" />
+		<string id="LTE01544" text="피 묻은 손 카사프" />
+		<string id="LTE01545" text="아이 도둑 니코" />
+		<string id="LTE01546" text="변소 털이 알렉스" />
+		<string id="LTE01547" text="해방자 우스키" />
+		<string id="LTE01548" text="어여쁜 부인" />
+		<string id="LTE01549" text="우아철철 부인" />
+		<string id="LTE01550" text="샤르멜 귀부인" />
+		<string id="LTE01551" text="러블린 남작부인" />
+		<string id="LTE01552" text="매애슬롯 경" />
+		<string id="LTE01553" text="시 영주" />
+		<string id="LTE01554" text="티투스 발레리우스" />
+		<string id="LTE01555" text="그린지 선생" />
+		<string id="LTE01556" text="약삭빠른 사이먼" />
+		<string id="LTE01557" text="셈쟁이 모이셰" />
+		<string id="LTE01558" text="보석상 제이콥" />
+		<string id="LTE01559" text="황금 손 무스타파" />
+		<string id="LTE01560" text="돈돈 실레니우스" />
+		<string id="LTE01561" text="노새 페트로" />
+		<string id="LTE01562" text="레지널드 드 콘힐" />
+		<string id="LTE01563" text="흔들림 없는 우르술라" />
+		<string id="LTE01564" text="빗자루 베트" />
+		<string id="LTE01565" text="토니시아 부인" />
+		<string id="LTE01566" text="수은 남작" />
+		<string id="LTE01567" text="위대한 파라켈수스 대공" />
+		<string id="LTE01568" text="톱니 갈이 힐다" />
+		<string id="LTE01569" text="건축가 제이슨" />
+		<string id="LTE01570" text="건설가 세드릭" />
+		<string id="LTE01571" text="배 만드는 에릭" />
+
+		<!-- Book Stash / errors -->
+		<string id="LTE_IVxtevp" text="닫기" />
+		<string id="LTE_HlSCpug" text="지능: {INT_VALUE}" />
+		<string id="LTE_57VY1h0" text="LT_Education 오류: 책이 없습니다! 모드를 다시 설치하십시오. 압축 파일은 7-Zip으로 푸십시오." />
+		<string id="LTE_WH3jEnq" text="LT_Education: 책장수를 생성할 수 없습니다... 모드를 다시 설치하십시오." />
+		<string id="LTE_Ij9eNgV" text="LTEducation: OpenPart를 호출할 수 없습니다. 호환되지 않는 게임 버전입니다!" />
+		<string id="LTE_PVfXG2f" text="LT_Education: 현재 게임에 모드를 불러오는 중 오류가 발생했습니다." />
+	</strings>
+</base>

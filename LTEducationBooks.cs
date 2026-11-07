@@ -38,12 +38,13 @@ namespace LT_Education
 
             if (bookItem == null) return; // can't find our book
 
-            if (!bookItem.Name.Contains("[Read]")) {
+            TextObject readTO = new("{=LTE00531} [Read]");
+            string readSuffix = readTO.ToString();
+            if (!bookItem.Name.ToString().EndsWith(readSuffix)) {
                 // Harmony magic
                 var propertyInfo = AccessTools.Property(typeof(ItemObject), "Name");
                 var setter = propertyInfo.GetSetMethod(true);
-                TextObject readTO = new("{=LTE00531} [Read]");
-                TextObject newItemName = new(bookItem.Name + readTO.ToString());
+                TextObject newItemName = new(bookItem.Name + readSuffix);
                 setter.Invoke(bookItem, new object[] { newItemName });
             }
 
@@ -75,6 +76,13 @@ namespace LT_Education
             int minVendorBooks = 8;
 
             int bookCount = _bookList.Count<ItemObject>() - 1; // remove testing book
+
+            if (bookCount < 1)
+            {
+                LTLogger.IMRed("{=LTE_57VY1h0}LT_Education ERROR: NO BOOKS! Reinstall the mod. Use 7-Zip to extract the archive.");
+                return;
+            }
+
             Random rand = new();
             foreach (Hero vendor in _vendorList)
             {
@@ -126,13 +134,16 @@ namespace LT_Education
                 if (count < minVendorBooks)
                 {
 
-                    int booksToAdd = rand.Next(minVendorBooks - 1) + (minVendorBooks - count);
+                    // final count lands in [minVendorBooks..maxVendorBooks]
+                    int booksToAdd = (minVendorBooks - count) + rand.Next(maxVendorBooks - minVendorBooks + 1);
 
                     string addedBooks = "";
                     for (int i = 0; i < booksToAdd; i++)
                     {
-                        int rndBook = rand.Next(bookCount) + 1;
-                        vendorBooks.Add(_bookList.ElementAt(rndBook));
+                        int rndBook = rand.Next(_booksInMod) + 1;
+                        ItemObject rndBookItem = GetBookItem(rndBook);
+                        if (rndBookItem == null) continue;
+                        vendorBooks.Add(rndBookItem);
                         addedBooks = addedBooks + " " + rndBook;
                     }
                     if (debug) LTLogger.IM("Added books to " + vendor.FirstName.ToString() + ": " + addedBooks);
@@ -246,6 +257,13 @@ namespace LT_Education
             if (_bookInProgress < 1 || _bookInProgress > _booksInMod) return;
             if (Hero.MainHero.IsPrisoner) return;
 
+            if (!HeroHasBook(Hero.MainHero, _bookInProgress))
+            {
+                HeroStopReadingAndReturnBookToParty(Hero.MainHero);
+                LTLogger.IMRed("{=LTE00524}You don't have a book you were reading before...");
+                return;
+            }
+
             _bookProgress[_bookInProgress] += 0.5f;
 
             if (_bookProgress[_bookInProgress] >= 100f)
@@ -291,7 +309,7 @@ namespace LT_Education
                     //hero.CurrentSettlement == null in villages, !null in towns/castles when "waiting"
                     if (party.LastVisitedSettlement != null && party.LastVisitedSettlement.IsVillage)
                     {
-                        float distance = Campaign.Current.Models.MapDistanceModel.GetDistance(MobileParty.MainParty, party.LastVisitedSettlement);
+                        float distance = Campaign.Current.Models.MapDistanceModel.GetDistance(MobileParty.MainParty, party.LastVisitedSettlement, false, MobileParty.NavigationType.Default, out _);
                         //Logger.IM("Distance to last visited settlement " + party.LastVisitedSettlement.Name.ToString() + ": " + distance.ToString());
                         if (distance < 1.05f) // distance, to decide if we are "inside" the village with 0.05 safety margin, usually its <1
                         {
@@ -600,18 +618,19 @@ namespace LT_Education
         public void HeroStopReadingAndReturnBookToParty(Hero hero)
         {
             if (hero == null) return;
-            if (hero.SpecialItems == null) return;
-            if (hero.SpecialItems.Count == 0) return;
-            if (_bookList == null) return;
 
-            foreach (ItemObject book in _bookList)
+            // the reading state is always cleared, even when the book is already gone
+            if (hero.SpecialItems != null && hero.SpecialItems.Count > 0 && _bookList != null)
             {
-                if (hero.SpecialItems.Contains(book))
+                foreach (ItemObject book in _bookList)
                 {
-                    hero.SpecialItems.Remove(book);
+                    if (hero.SpecialItems.Contains(book))
+                    {
+                        hero.SpecialItems.Remove(book);
 
-                    ItemRosterElement itemRoster = new ItemRosterElement(book, 1, null);
-                    MobileParty.MainParty.ItemRoster.Add(itemRoster);
+                        ItemRosterElement itemRoster = new ItemRosterElement(book, 1, null);
+                        MobileParty.MainParty.ItemRoster.Add(itemRoster);
+                    }
                 }
             }
 

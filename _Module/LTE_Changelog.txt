@@ -1,0 +1,44 @@
+LT_Education v1.12.0 :
+- Dead book vendors are now replaced by a new vendor with the same name, at the next weekly update or when loading the game.
+- The new vendor starts with fresh relations. The dead one stays in the encyclopedia.
+- Book vendors no longer die of old age.
+- Fixed the book icon on the map never showing for Lady Pokesalot (the One-Handed novice scholar).
+- Fixed scholar and vendor icons on the map staying hidden for up to a day after your scout reached 200 Scouting.
+- Fixed books disappearing when a companion who was reading left your clan or died. The book now returns to your party.
+- Fixed a companion keeping a book after their reading got stuck in a broken state.
+- Fixed scholar training breaking when you saved and loaded during training. Training now resumes where it stopped and pays out correctly.
+- Fixed the training screen showing the wrong scholar if the scholar moved to another town during your training.
+- Fixed book vendors being duplicated in towns each time a town menu was opened.
+- Fixed your character silently "reading" a book you had sold or lost. You now get a message and reading stops.
+- Fixed the "You don't have a book you were reading before..." message repeating every hour while reading.
+- Fixed the "lteducation.debug 0" console command setting the minimum Intelligence to read to 4 instead of 3 and not restoring the rest time between trainings.
+- Fixed the "Can read!" map notification title not being translated.
+- Fixed Alt+F12 reopening the Book Stash many times while the keys were held.
+- Fixed the Book Stash crashing when opened while you were a prisoner.
+- Fixed some random picks never choosing the last option (vendor spawn towns and weapon part offers).
+- Fixed relation changes with book vendors sometimes applying more than once per greeting.
+- Fixed possible errors after returning to the main menu and loading another game.
+- Fixed weapon part purchase messages ("Selected: ..." and "You don't have enough gold...") so they can be translated.
+- Fixed the Japanese "Can read!" notification saying "Can't read!".
+- Fixed the Polish, Spanish and Chinese "[Read]" book tag meaning "read (now)" instead of "already read".
+- Fixed read books getting a second "[Read]" tag in non-English languages.
+- Fixed book vendors sometimes stocking more than 12 books.
+- Fixed a possible crash when teaching weapon parts on an incompatible game version. An error message is shown instead.
+- Fixed a crash when a dead book vendor was moved to another town or brought back to life.
+- Fixed a possible crash when the mod wrote its first error or debug log.
+- Fixed smiths saying "Come tomorrow" after starting or loading a game until a day had passed.
+- Fixed a possible crash when a book vendor outside any town was moved at the weekly update.
+- Fixed scholar training starting, and using up the rest time, with nobody selected.
+- Fixed a possible crash in the debug book vendor location list.
+- Fixed a possible crash when opening the reading menu outside a town or castle.
+- Added German, French, Italian, Korean and Traditional Chinese translations.
+- Completed the Brazilian Portuguese translation and translated the missing lines in all other languages.
+- Fixed many wrong or broken lines in the Chinese, Japanese, Polish, Russian, Spanish, Turkish, Ukrainian and Brazilian Portuguese translations.
+	Fixed the "You can't read..." message saying the opposite in all languages.
+	Fixed broken text values (names, gold, line breaks) in Turkish, Spanish, Ukrainian, Japanese and Russian.
+	Fixed the word "and" in settlement lists being empty in Spanish and Brazilian Portuguese.
+- Fixed the Book Stash "Close" button, the "INT" label and several error messages not being translated.
+- Renamed the language files to the standard names.
+
+LT_Education v1.11.4 :
+- Updated for game version 1.4.7-8.

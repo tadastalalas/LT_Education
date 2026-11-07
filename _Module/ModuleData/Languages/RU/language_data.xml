@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LanguageData id="Русский" name="Русский" subtitle_extension="ru" supported_iso="ru,rus,ru-ru,ru-md">
-  <LanguageFile xml_path="RU/RussianTranslation.xml" />
-  <VoiceFile xml_path="VoicedLines/voiced_lines_en.xml" />
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData id="Русский" name="Русский" subtitle_extension="ru" supported_iso="ru,rus,ru-ru,ru-md" text_processor="TaleWorlds.Localization.TextProcessor.LanguageProcessors.RussianTextProcessor" under_development="false">
+	<LanguageFile xml_path="RU/std_module_strings_xml_rus.xml" />
+	<VoiceFile xml_path="VoicedLines/voiced_lines_en.xml" />
 </LanguageData>

@@ -38,7 +38,7 @@ namespace LT.UI.MapNotification
         {
             get
             {
-                return new TextObject("{LTE00581}Can read!"); // not sure where this is used
+                return new TextObject("{=LTE00581}Can read!"); // not sure where this is used
             }
         }
 

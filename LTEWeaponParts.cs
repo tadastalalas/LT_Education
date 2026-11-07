@@ -7,6 +7,7 @@ using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.Actions;
 using TaleWorlds.CampaignSystem.CampaignBehaviors;
 using TaleWorlds.Core;
+using TaleWorlds.Core.ImageIdentifiers;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 
@@ -26,6 +27,8 @@ namespace LT_Education
 
         private bool HasWeaponPartsToTrade()
         {
+            // offers are not saved; fill them on the first smith talk after start/load instead of waiting a day
+            if (_currentWeaponPartsInventory == null) RefreshWeaponPartsCurrentInventory();
             if (_currentWeaponPartsInventory == null) return false;
             if (_currentWeaponPartsInventory.Count == 0) return false;
             return true;
@@ -34,8 +37,6 @@ namespace LT_Education
 
         private void OpenWeaponPartsTrade()
         {
-
-            //RefreshWeaponPartsCurrentInventory();
 
             List<InquiryElement> list = new();
 
@@ -62,7 +63,7 @@ namespace LT_Education
                 string hint = new TextObject(itemHint, null).ToString();
                 bool activeItem = true;
 
-                list.Add(new InquiryElement(craftingPiece, itemNameTO, new ImageIdentifier(craftingPiece, ""), activeItem, hint));
+                list.Add(new InquiryElement(craftingPiece, itemNameTO, new CraftingPieceImageIdentifier(craftingPiece, ""), activeItem, hint));
 
                 //LTLogger.IMGreen(itemName);
             }
@@ -86,7 +87,9 @@ namespace LT_Education
                             int price = GetWeaponPartPriceToUnlock(craftingPiece);
                             totalPrice += price;
 
-                            TextObject msg = new TextObject("{=LTE01405}Selected: " + craftingPiece.Name.ToString() + ": " + price.ToString() + "{GOLD_ICON}");
+                            TextObject msg = new TextObject("{=LTE01405}Selected: {PIECE_NAME}: {PRICE}{GOLD_ICON}");
+                            msg.SetTextVariable("PIECE_NAME", craftingPiece.Name.ToString());
+                            msg.SetTextVariable("PRICE", price);
                             LTLogger.IMGrey(msg.ToString());
                         }
                     }
@@ -97,7 +100,8 @@ namespace LT_Education
                 // gold check
                 if (totalPrice > Hero.MainHero.Gold)
                 {
-                    TextObject msg = new TextObject("{=LTE01406}You don't have enough gold. Total price: " + totalPrice.ToString() + "{GOLD_ICON}");
+                    TextObject msg = new TextObject("{=LTE01406}You don't have enough gold. Total price: {PRICE}{GOLD_ICON}");
+                    msg.SetTextVariable("PRICE", totalPrice);
                     LTLogger.IMTARed(msg.ToString());
                 } else
                 {
@@ -133,8 +137,14 @@ namespace LT_Education
 
         public void OpenPart(CraftingPiece selectedPiece)
         {
-            ICraftingCampaignBehavior craftingBehavior = Campaign.Current.GetCampaignBehavior<ICraftingCampaignBehavior>();
-            MethodInfo dynMethod = craftingBehavior.GetType().GetMethod("OpenPart", BindingFlags.Instance | BindingFlags.NonPublic);
+            ICraftingCampaignBehavior? craftingBehavior = Campaign.Current.GetCampaignBehavior<ICraftingCampaignBehavior>();
+            MethodInfo? dynMethod = craftingBehavior?.GetType().GetMethod("OpenPart", BindingFlags.Instance | BindingFlags.NonPublic);
+
+            if (craftingBehavior == null || dynMethod == null)
+            {
+                LTLogger.IMRed("{=LTE_Ij9eNgV}LTEducation: Unable to call OpenPart, incompatible game version!");
+                return;
+            }
 
             int parameters = dynMethod.GetParameters().Count<ParameterInfo>();
             //LTLogger.IMRed("Params: " + parameters.ToString());
@@ -154,7 +164,7 @@ namespace LT_Education
             }
             else
             {
-                LTLogger.IMRed("LTEducation: Unable to call OpenPart, incompatible game version!");
+                LTLogger.IMRed("{=LTE_Ij9eNgV}LTEducation: Unable to call OpenPart, incompatible game version!");
             }
             
         }
@@ -180,12 +190,12 @@ namespace LT_Education
             {
                 if (myList.Count == 0) break;
 
-                int num = (myList.Count == 1) ? 0 : r.Next(myList.Count - 1);
+                int num = r.Next(myList.Count);
                 this._currentWeaponPartsInventory.Add(myList[num]);
                 myList.Remove(myList[num]);
             }
 
-            LTLogger.IMGrey("RefreshWeaponPartsCurrentInventory");
+            //if (_debug) LTLogger.IMGrey("RefreshWeaponPartsCurrentInventory");
         }
 
 

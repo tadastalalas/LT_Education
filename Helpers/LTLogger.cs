@@ -26,8 +26,9 @@ namespace LT.Logger
         static LTLogger()
         {
             if (!Directory.Exists(LOG_PATH)) Directory.CreateDirectory(LOG_PATH);
-            if (!File.Exists(ERROR_FILE)) File.Create(ERROR_FILE);
-            if (!File.Exists(DEBUG_FILE)) File.Create(DEBUG_FILE);
+            // File.Create returns an open stream; close it or later writes fail with "file in use"
+            if (!File.Exists(ERROR_FILE)) File.Create(ERROR_FILE).Dispose();
+            if (!File.Exists(DEBUG_FILE)) File.Create(DEBUG_FILE).Dispose();
         }
 
         public static void LogDebug(string log)
@@ -129,7 +130,7 @@ namespace LT.Logger
         // yellow notification at the top-center, like relation change
         internal static void AddQuickNotificationWithSound(TextObject content, BasicCharacterObject? announcer = null, string? sounEventPath = null)
         {
-            MBInformationManager.AddQuickInformation(content, 0, announcer, sounEventPath);
+            MBInformationManager.AddQuickInformation(content, 0, announcer, null, sounEventPath ?? "");
         }
 
     }

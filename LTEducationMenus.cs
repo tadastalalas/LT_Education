@@ -4,7 +4,7 @@ using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.Actions;
 using TaleWorlds.CampaignSystem.Encounters;
 using TaleWorlds.CampaignSystem.GameMenus;
-using TaleWorlds.CampaignSystem.Overlay;
+//using TaleWorlds.CampaignSystem.Overlay;
 using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.CampaignSystem.Settlements;
 using TaleWorlds.Core;
@@ -13,6 +13,7 @@ using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using LT.UI;
 using LT.Logger;
+using TaleWorlds.Core.ImageIdentifiers;
 
 namespace LT_Education
 {
@@ -63,7 +64,7 @@ namespace LT_Education
                      MBTextManager.SetTextVariable("READ_PRICE", _readPrice.ToString(), false);
                      MBTextManager.SetTextVariable("MENU_TEXT", "{=LTE00502}You found a scholar who agreed to teach you how to read for {READ_PRICE}{GOLD_ICON} per hour.", false);
                  }
-             }, TaleWorlds.CampaignSystem.Overlay.GameOverlays.MenuOverlayType.SettlementWithBoth);
+             }, GameMenu.MenuOverlayType.SettlementWithBoth);
 
             starter.AddGameMenuOption("education_learn_read_menu_town", "teach", "{=LTE00503}Let's do this!", (MenuCallbackArgs args) =>
             {
@@ -146,7 +147,7 @@ namespace LT_Education
                 }
 
             },
-            GameMenu.MenuAndOptionType.WaitMenuShowOnlyProgressOption, GameOverlays.MenuOverlayType.None, 0f, GameMenu.MenuFlags.None, null);
+            GameMenu.MenuAndOptionType.WaitMenuShowOnlyProgressOption, GameMenu.MenuOverlayType.None, 0f, GameMenu.MenuFlags.None, null);
 
 
             starter.AddGameMenuOption("education_learn_read_menu_town_progress", "leave", "{=LTE00509}Stop for now", delegate (MenuCallbackArgs args)
@@ -173,7 +174,7 @@ namespace LT_Education
             starter.AddGameMenu("education_learn_read_menu_village", "{=LTE00510}Local villagers look confused. After a short talk between themselves, the brightest of them points towards the town...",
              (MenuCallbackArgs args) => {
                  args.MenuContext.SetBackgroundMeshName("book_menu_sprite8");
-             }, TaleWorlds.CampaignSystem.Overlay.GameOverlays.MenuOverlayType.SettlementWithBoth);
+             }, GameMenu.MenuOverlayType.SettlementWithBoth);
 
             starter.AddGameMenuOption("education_learn_read_menu_village", "leave", "{=LTE00504}Leave", (MenuCallbackArgs args) =>
             {
@@ -194,7 +195,7 @@ namespace LT_Education
             starter.AddGameMenu("education_learn_read_menu_castle", "{=LTE00511}Locals look puzzled. After scratching their heads they suggest you should go to the town...",
              (MenuCallbackArgs args) => {
                  args.MenuContext.SetBackgroundMeshName("book_menu_sprite9");
-             }, TaleWorlds.CampaignSystem.Overlay.GameOverlays.MenuOverlayType.SettlementWithBoth);
+             }, GameMenu.MenuOverlayType.SettlementWithBoth);
 
             starter.AddGameMenuOption("education_learn_read_menu_castle", "leave", "{=LTE00504}Leave", (MenuCallbackArgs args) =>
             {
@@ -311,7 +312,7 @@ namespace LT_Education
                     }
                 }
 
-            }, GameOverlays.MenuOverlayType.SettlementWithBoth);
+            }, GameMenu.MenuOverlayType.SettlementWithBoth);
 
             starter.AddGameMenuOption("education_menu", "start_reading", "{=LTE00532}Start reading", (MenuCallbackArgs args) =>
             {
@@ -351,7 +352,7 @@ namespace LT_Education
                             hint = new TextObject("{=LTE00517}You have already read this book.").ToString();
                         }
                     }
-                    list.Add(new InquiryElement(book, itemName, new ImageIdentifier(book), activeItem, hint));
+                    list.Add(new InquiryElement(book, itemName, new ItemImageIdentifier(book), activeItem, hint));
                 }
 
 
@@ -469,17 +470,21 @@ namespace LT_Education
                 // 19-20-21 female town
                 // 22-23-24 female castle
                 // 25-26-27 female village
+                // CurrentSettlement can be null while waiting at a village; LastVisitedSettlement keeps the village
+                Settlement? readingSettlement = MobileParty.MainParty.CurrentSettlement ?? MobileParty.MainParty.LastVisitedSettlement;
+                bool inTown = readingSettlement != null && readingSettlement.IsTown;
+                bool inCastle = readingSettlement != null && readingSettlement.IsCastle;
                 int menuIndex;
                 if (Hero.MainHero.IsFemale || _debug)
                 {
-                    if (MobileParty.MainParty.CurrentSettlement.IsTown) { menuIndex = 19; }
-                    else if (MobileParty.MainParty.CurrentSettlement.IsCastle) { menuIndex = 22; }
+                    if (inTown) { menuIndex = 19; }
+                    else if (inCastle) { menuIndex = 22; }
                     else { menuIndex = 25; }
                 }
                 else
                 {
-                    if (MobileParty.MainParty.CurrentSettlement.IsTown) { menuIndex = 16; }
-                    else if (MobileParty.MainParty.CurrentSettlement.IsCastle) { menuIndex = 10; }
+                    if (inTown) { menuIndex = 16; }
+                    else if (inCastle) { menuIndex = 10; }
                     else { menuIndex = 13; }
                 }
                 Random rand = new();
@@ -501,7 +506,7 @@ namespace LT_Education
                 if (_bookInProgress > 0 && _bookInProgress < _booksInMod + 1) progress = (float)_bookProgress[_bookInProgress] / 100;
                 args.MenuContext.GameMenu.SetProgressOfWaitingInMenu(progress);
             },
-            GameMenu.MenuAndOptionType.WaitMenuShowOnlyProgressOption, GameOverlays.MenuOverlayType.None, 0f, GameMenu.MenuFlags.None, null);
+            GameMenu.MenuAndOptionType.WaitMenuShowOnlyProgressOption, GameMenu.MenuOverlayType.None, 0f, GameMenu.MenuFlags.None, null);
 
 
 
@@ -534,7 +539,7 @@ namespace LT_Education
 
                 //Logger.IM(scholarIndex.ToString());
 
-            }, TaleWorlds.CampaignSystem.Overlay.GameOverlays.MenuOverlayType.SettlementWithBoth);
+            }, GameMenu.MenuOverlayType.SettlementWithBoth);
 
 
             starter.AddGameMenuOption("scholar_menu", "scholar_proceed", "{=LTE00541}Who will participate?",
@@ -588,6 +593,9 @@ namespace LT_Education
                             }
                         }
                     }
+
+                    // nobody selected (or "All" with everyone wounded): don't start an empty training
+                    if (heroList.Count == 0) return;
 
                     int scholarIndex = GetScholarIndexbySettlement(Settlement.CurrentSettlement);
                     int pricePerHour = GetScholarPrice(scholarIndex);
@@ -665,14 +673,20 @@ namespace LT_Education
             starter.AddWaitGameMenu("scholar_training_wait", "{TRAINING_INFO}", delegate (MenuCallbackArgs args)
             {
 
-                int scholarIndex = GetScholarIndexbySettlement(Settlement.CurrentSettlement);
+                // the scholar may move to another settlement during training (daily migration), so use the saved index
+                int scholarIndex = this._trainingScholarIndex >= 0 ? this._trainingScholarIndex : GetScholarIndexbySettlement(Settlement.CurrentSettlement);
                 MBTextManager.SetTextVariable("SCHOLAR_NAME", GetScholarName(scholarIndex).ToString(), false);
                 MBTextManager.SetTextVariable("SKILL_NAME", GetScholarSkill(scholarIndex).ToString(), false);
                 MBTextManager.SetTextVariable("SCHOLAR_LEVEL", GetScholarLevel(scholarIndex).ToString(), false);
                 MBTextManager.SetTextVariable("TRAINING_INFO", new TextObject("{=LTE00548}Training by {SCHOLAR_NAME}, {SCHOLAR_LEVEL} in {SKILL_NAME}"), false);
 
                 args.MenuContext.SetBackgroundMeshName(GetScholarImage(scholarIndex));
-                args.MenuContext.GameMenu.SetTargetedWaitingTimeAndInitialProgress((float)this._trainingDuration, 0f);        
+
+                // resume from the elapsed time when the menu is re-opened (e.g. after loading a save)
+                float initialProgress = (float)this._startTimeOfTraining.ElapsedHoursUntilNow / (float)this._trainingDuration;
+                if (initialProgress < 0f) initialProgress = 0f;
+                if (initialProgress > 1f) initialProgress = 1f;
+                args.MenuContext.GameMenu.SetTargetedWaitingTimeAndInitialProgress((float)this._trainingDuration, initialProgress);        
 
             }, delegate (MenuCallbackArgs args)
             {
@@ -685,7 +699,7 @@ namespace LT_Education
             }, delegate (MenuCallbackArgs args, CampaignTime dt)
             {               
                 args.MenuContext.GameMenu.SetProgressOfWaitingInMenu((float)this._startTimeOfTraining.ElapsedHoursUntilNow / (float)this._trainingDuration);
-            }, GameMenu.MenuAndOptionType.WaitMenuShowOnlyProgressOption, GameOverlays.MenuOverlayType.None, 0f, GameMenu.MenuFlags.None, null);
+            }, GameMenu.MenuAndOptionType.WaitMenuShowOnlyProgressOption, GameMenu.MenuOverlayType.None, 0f, GameMenu.MenuFlags.None, null);
 
 
             starter.AddGameMenuOption("scholar_training_wait", "leave", new TextObject("{=LTE00550}Interrupt").ToString(), delegate (MenuCallbackArgs args)
@@ -727,7 +741,7 @@ namespace LT_Education
 
                 foreach(Hero hero in this._trainingHeroList)
                 {
-                    hero.HeroDeveloper.AddSkillXp(scholarSkill, totalExp, false, true);
+                    hero?.HeroDeveloper?.AddSkillXp(scholarSkill, totalExp, false, true);
                 }
 
             }
@@ -798,7 +812,7 @@ namespace LT_Education
                         hint = new TextObject("{=LTE00554}Can't attend - Wounded", null);
                     }
 
-                    list.Add(new InquiryElement(hero, hero.Name.ToString(), new ImageIdentifier(CharacterCode.CreateFrom(characterAtIndex)), activeItem, hint.ToString()));
+                    list.Add(new InquiryElement(hero, hero.Name.ToString(), new CharacterImageIdentifier(CharacterCode.CreateFrom(characterAtIndex)), activeItem, hint.ToString()));
                 }
             }
             return list;

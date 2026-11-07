@@ -1,13 +1,14 @@
-﻿using TaleWorlds.CampaignSystem;
-using TaleWorlds.Library;
-using TaleWorlds.Localization;
-using TaleWorlds.Core;
-using TaleWorlds.CampaignSystem.ViewModelCollection;
-using TaleWorlds.Core.ViewModelCollection.Information;
+﻿using LT.Helpers;
+using LT_Education;
 using System.Collections.Generic;
 using System.Linq;
-using LT.Helpers;
-using LT_Education;
+using TaleWorlds.CampaignSystem;
+using TaleWorlds.CampaignSystem.ViewModelCollection;
+using TaleWorlds.Core;
+using TaleWorlds.Core.ViewModelCollection.ImageIdentifiers;
+using TaleWorlds.Core.ViewModelCollection.Information;
+using TaleWorlds.Library;
+using TaleWorlds.Localization;
 
 namespace LT.UI
 {
@@ -21,8 +22,8 @@ namespace LT.UI
         private float _heroCanRead;
         private int _heroINT;
 
-        private ImageIdentifierVM _imageIdentifier;
-        private ImageIdentifierVM _banner;
+        private CharacterImageIdentifierVM _imageIdentifier;
+        private BannerImageIdentifierVM _banner;
         private string _heroName;
         private string _INTText;
         private string _statusLineText;
@@ -51,6 +52,7 @@ namespace LT.UI
 
         public string PartyHasNoBooksText => new TextObject("{=LTE00565}Party has no books").ToString();
         public string PartyHasNoScrollsText => new TextObject("{=LTE00566}Party has no scrolls").ToString();
+        public string CloseText => new TextObject("{=LTE_IVxtevp}Close").ToString();
 
         public HintViewModel StopReadingBookHint => new(new TextObject("{=LTE00564}Stop Reading"));
         public HintViewModel NextCharacterHint => new(GameTexts.FindText("str_inventory_next_char", null));
@@ -64,14 +66,22 @@ namespace LT.UI
         public LTEducationBookStashVM(Hero hero) : base(true)
         {
 
-            _imageIdentifier = new ImageIdentifierVM();
+            _imageIdentifier = new CharacterImageIdentifierVM(null);
 
             _hero = hero;
             _heroIndex = 0;
 
-            _heroList = (from characterObject in Hero.MainHero.PartyBelongedTo.MemberRoster.GetTroopRoster()
-                         where characterObject.Character.HeroObject != null
-                         select characterObject.Character.HeroObject).ToList<Hero>();
+            // no party while captured: show only the main hero
+            if (Hero.MainHero.PartyBelongedTo?.MemberRoster == null)
+            {
+                _heroList = [Hero.MainHero];
+            }
+            else
+            {
+                _heroList = (from characterObject in Hero.MainHero.PartyBelongedTo.MemberRoster.GetTroopRoster()
+                             where characterObject.Character.HeroObject != null
+                             select characterObject.Character.HeroObject).ToList<Hero>();
+            }
 
             _heroCanRead = 0;
             _heroINT = 0;
@@ -107,10 +117,10 @@ namespace LT.UI
             _heroCanRead = LT_EducationBehaviour.Instance.HeroCanRead(_hero);
             _heroINT = _hero.GetAttributeValue(DefaultCharacterAttributes.Intelligence);
 
-            ImageIdentifier = new ImageIdentifierVM(new ImageIdentifier(CampaignUIHelper.GetCharacterCode(_hero.CharacterObject)));
-            Banner = new ImageIdentifierVM(BannerCode.CreateFrom(_hero.Clan.Banner), true);
+            ImageIdentifier = new CharacterImageIdentifierVM(CampaignUIHelper.GetCharacterCode(_hero.CharacterObject));
+            Banner = new BannerImageIdentifierVM(_hero.Clan?.Banner ?? Clan.PlayerClan.Banner, true);
             HeroName =_hero.Name.ToString();
-            INTText = "INT: " + _heroINT.ToString();
+            INTText = new TextObject("{=LTE_HlSCpug}INT: {INT_VALUE}").SetTextVariable("INT_VALUE", _heroINT).ToString();
 
             BooksInfo = new MBBindingList<LTEducationBookVM>();
             List<ItemObject> booksList = LT_EducationBehaviour.Instance.GetUniquePartyBooks(1);
@@ -233,7 +243,7 @@ namespace LT.UI
 
 
         [DataSourceProperty]
-        public ImageIdentifierVM Banner
+        public BannerImageIdentifierVM Banner
         {
             get => _banner;
             set
@@ -250,7 +260,7 @@ namespace LT.UI
 
 
         [DataSourceProperty]
-        public ImageIdentifierVM ImageIdentifier
+        public CharacterImageIdentifierVM ImageIdentifier
         {
             get => _imageIdentifier;
             set

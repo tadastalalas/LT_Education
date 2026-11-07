@@ -30,7 +30,7 @@ namespace LT_Education
             }
             catch (Exception ex)
             {
-                LTLogger.IMRed("LT_Education: An Error occurred, when trying to load the mod into your current game.");
+                LTLogger.IMRed("{=LTE_PVfXG2f}LT_Education: An Error occurred, when trying to load the mod into your current game.");
                 LTLogger.LogError(ex);
             }
         }
@@ -71,8 +71,9 @@ namespace LT_Education
         {
             if (Game.Current != null)
             {
-                if (Input.IsKeyDown(InputKey.LeftAlt) && Input.IsKeyDown(InputKey.F12) && //Input.IsKeyDown(InputKey.O) && 
-                    Game.Current.GameStateManager.ActiveState.GetType() == typeof(MapState) && !Game.Current.GameStateManager.ActiveState.IsMenuState && !Game.Current.GameStateManager.ActiveState.IsMission)
+                // F12 must be a fresh press, otherwise holding the keys reopens the window every frame
+                if (Input.IsKeyDown(InputKey.LeftAlt) && Input.IsKeyPressed(InputKey.F12) &&
+                    Game.Current.GameStateManager.ActiveState.GetType() == typeof(MapState) && !Game.Current.GameStateManager.ActiveState.IsMenuState)
                 {
                     SoundEvent.PlaySound2D("event:/ui/notification/quest_start");
                     LTUIManager.Instance.ShowWindow("BookStash", "");

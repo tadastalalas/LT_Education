@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="Français" />
+	</tags>
+	<strings>
+
+		<!-- Releasing translations separate from the main mod without my permission are not allowed. -->
+
+		<!-- General -->
+		<string id="LTE00000" text="et" />
+
+		<!-- Vendors -->
+		<string id="LTE00301" text="Eadric" />
+		<string id="LTE00302" text="Ingeborg" />
+		<string id="LTE00303" text="Ahsan" />
+		<string id="LTE00304" text=" le libraire" />
+		<string id="LTE00305" text="Eadric est un libraire d'âge mûr originaire de l'Empire, qui prétend pourtant venir du Nord. De petite taille et toujours vêtu d'un habit de moine, il parle d'une voix agréable et se montre d'une politesse remarquable. Mais Eadric est aussi un homme mystérieux, toujours prudent et sur ses gardes, comme s'il se cachait de quelqu'un. Son passé est enveloppé de secret, et il se tient à l'écart de son entourage sans jamais trop en révéler sur lui-même. Il n'en est pas moins réputé pour sa vaste connaissance de la littérature et son service irréprochable." />
+		<string id="LTE00306" text="Ingeborg est une jeune femme nordique, grande et blonde, qui sait se défendre. Son père, un ancien soldat, lui a appris à se battre, tandis que sa mère lui a transmis sa passion pour la littérature. Elle voyage pour vendre des livres et use de ses talents pour se protéger en chemin. Sous ses dehors robustes, Ingeborg a bon cœur et elle est connue pour sa vaste connaissance de la littérature." />
+		<string id="LTE00307" text="Ahsan, un vieil homme venu d'un village du Sud, a toujours été connu pour son caractère emporté. Malgré sa personnalité revêche, il nourrissait un profond amour des livres et devint un libraire respecté. Avec l'âge, Ahsan s'isola de plus en plus, se réfugiant dans ses livres comme derrière un bouclier contre le monde. Malgré son humeur grincheuse, il était vénéré pour son savoir et son dévouement à la littérature." />
+
+		<!-- Books/Scrolls -->
+		<string id="LTE00401" text="Livre : Étude de l'épée et du bouclier" />
+		<string id="LTE00402" text="Livre : Guide des haches à deux mains" />
+		<string id="LTE00403" text="Livre : Histoire des lances" />
+		<string id="LTE00404" text="Livre : La Précision de l'archer" />
+		<string id="LTE00405" text="Livre : Les Chroniques de l'arbalète" />
+		<string id="LTE00406" text="Livre : Maîtriser les armes de jet" />
+		<string id="LTE00407" text="Livre : La Maîtrise du cheval de guerre" />
+		<string id="LTE00408" text="Livre : Guide d'athlétisme du guerrier" />
+		<string id="LTE00409" text="Livre : La Forge majestueuse" />
+		<string id="LTE00410" text="Livre : Les Vrais Éclaireurs" />
+		<string id="LTE00411" text="Livre : Tactiques du commandant" />
+		<string id="LTE00412" text="Livre : Dans l'ombre" />
+		<string id="LTE00413" text="Livre : Conversations charmantes" />
+		<string id="LTE00414" text="Livre : Traité de commandement à l'usage des seigneurs" />
+		<string id="LTE00415" text="Livre : Manuel de commerce de la guilde" />
+		<string id="LTE00416" text="Livre : Gestion efficace des ressources" />
+		<string id="LTE00417" text="Livre : Registre du chirurgien" />
+		<string id="LTE00418" text="Livre : Annales architecturales de l'ingénierie" />
+		<string id="LTE00419" text="Parchemin : La Saga de l'épée d'acier" />
+		<string id="LTE00420" text="Parchemin : Écrits sur le marteau de guerre" />
+		<string id="LTE00421" text="Parchemin : Manuel du fauchard" />
+		<string id="LTE00422" text="Parchemin : Opuscule de l'arc et de la flèche" />
+		<string id="LTE00423" text="Parchemin : Compendium de l'arbalète" />
+		<string id="LTE00424" text="Parchemin : Journal des dards et javelots" />
+		<string id="LTE00425" text="Parchemin : Archives des chroniques de cavalerie" />
+		<string id="LTE00426" text="Parchemin : Fables de la bonne forme" />
+		<string id="LTE00427" text="Parchemin : Notes sur la forge des lames" />
+		<string id="LTE00428" text="Parchemin : Les Pages de l'éclaireur" />
+		<string id="LTE00429" text="Parchemin : Manuscrit des tactiques de bataille" />
+		<string id="LTE00430" text="Parchemin : Souvenirs d'un roublard" />
+		<string id="LTE00431" text="Parchemin : Les Arts du charisme" />
+		<string id="LTE00432" text="Parchemin : Leçons de commandement" />
+		<string id="LTE00433" text="Parchemin : Mémoires d'un marchand" />
+		<string id="LTE00434" text="Parchemin : Le Registre de l'intendant" />
+		<string id="LTE00435" text="Parchemin : Remèdes et recettes" />
+		<string id="LTE00436" text="Parchemin : Formules de fortification" />
+
+		<!-- Menus / IM / Popups -->
+		<string id="LTE00500" text="Apprendre à lire" />
+		<string id="LTE00501" text="Personne ne veut vous apprendre à lire. On vous juge sans espoir... (INT &lt; {MIN_INT})" />
+		<string id="LTE00502" text="Vous avez trouvé un érudit qui accepte de vous apprendre à lire pour {READ_PRICE}{GOLD_ICON} de l'heure." />
+		<string id="LTE00503" text="Allons-y !" />
+		<string id="LTE00504" text="Partir" />
+		<string id="LTE00505" text="Une autre fois peut-être..." />
+		<string id="LTE00506" text="L'érudit commence par vous présenter l'alphabet et le son de chaque lettre. Il passe ensuite à des mots simples et vous apprend à les prononcer, ainsi qu'à les lire dans leur contexte. Il insiste sur l'importance de la prononciation et de l'articulation pour lire et comprendre correctement les textes." />
+		<string id="LTE00507" text="Payé : {READ_PAID}{GOLD_ICON}" />
+		<string id="LTE00508" text="Pas assez d'or pour poursuivre l'apprentissage..." />
+		<string id="LTE00509" text="S'arrêter pour l'instant" />
+		<string id="LTE00510" text="Les villageois ont l'air perplexes. Après une brève discussion entre eux, le plus éveillé d'entre eux pointe le doigt vers la ville..." />
+		<string id="LTE00511" text="Les habitants semblent perplexes. Après s'être gratté la tête, ils vous suggèrent d'aller en ville..." />
+		<string id="LTE00512" text="Gérer votre éducation" />
+		<string id="LTE00513" text="Lecture en cours : {newline}{newline}{READING_DATA}" />
+		<string id="LTE00514" text="Vous ne lisez rien en ce moment." />
+		<string id="LTE00515" text="Choisir une lecture" />
+		<string id="LTE00516" text="Voilà qui semble être une bonne lecture" />
+		<string id="LTE00517" text="Vous avez déjà lu ce livre." />
+		<string id="LTE00518" text="Désormais, vous lirez :" />
+		<string id="LTE00519" text="Choisir" />
+		<string id="LTE00520" text="Va lire " />
+		<string id="LTE00521" text="Décider de ne rien lire" />
+		<string id="LTE00522" text="Vous savez lire !" />
+		<string id="LTE00523" text="Que l'on sache dans tout le pays que vous savez lire et écrire !" />
+		<string id="LTE00524" text="Vous n'avez plus le livre que vous lisiez..." />
+		<string id="LTE00525" text="Lecture de {READING_DATA}" />
+		<string id="LTE00526" text="Vous avez fini de lire {FINISHED_BOOK} !" />
+		<string id="LTE00527" text="Votre compétence {BOOK_SKILL} a augmenté de {BOOK_SKILL_INC} !" />
+		<string id="LTE00528" text="Vous êtes trop doué en {BOOK_SKILL},{newline} ce livre était donc une perte de temps..." />
+		<string id="LTE00529" text="Lecture terminée" />
+		<string id="LTE00530" text="Continuer" />
+		<string id="LTE00531" text=" [Lu]" />
+		<string id="LTE00532" text="Commencer la lecture" />
+		<string id="LTE00533" text="novice" />
+		<string id="LTE00534" text="intermédiaire" />
+		<string id="LTE00535" text="avancé" />
+		<string id="LTE00536" text="expert" />
+		<string id="LTE00537" text="Rencontrer l'érudit" />
+		<string id="LTE00538" text="Aucun érudit ici..." />
+		<string id="LTE00539" text="Le tavernier pourrait peut-être vous aider..." />
+		<string id="LTE00540" text="{SCHOLAR_NAME}{newline}{newline}propose une formation en {SKILL_NAME} ({SCHOLAR_LEVEL}){newline}{newline}Prix : {SCHOLAR_PRICE}{GOLD_ICON}/h  Durée : {TRAINING_DURATION} h" />
+		<string id="LTE00541" text="Qui va participer ?" />
+		<string id="LTE00542" text="Formé récemment, a besoin de repos" />
+		<string id="LTE00543" text="Choisir qui sera formé" />
+		<string id="LTE00544" text="Prix par personne : {PERSON_PRICE} pour {PARTICIPANT_NUMBER} participant(s).{newline}{newline}Prix total : {TOTAL_PRICE}" />
+		<string id="LTE00545" text="Je reviendrai..." />
+		<string id="LTE00546" text="Commencer la formation ?" />
+		<string id="LTE00547" text="{SCHOLAR_NAME} est prêt à commencer la formation en {SKILL_NAME}.{newline}{newline}La formation coûtera {TOTAL_PRICE} pour {PARTICIPANT_NUMBER} participant(s).{newline}{newline}Voulez-vous continuer ?" />
+		<string id="LTE00548" text="Formation dispensée par {SCHOLAR_NAME} (niveau {SCHOLAR_LEVEL}) en {SKILL_NAME}" />
+		<string id="LTE00549" text="J'ai changé d'avis..." />
+		<string id="LTE00550" text="Interrompre" />
+		<string id="LTE00551" text="La qualité de la formation a diminué faute de concentration des participants..." />
+		<string id="LTE00552" text="Formation terminée" />
+		<string id="LTE00553" text="Tous les membres aptes du groupe" />
+		<string id="LTE00554" text="Ne peut pas participer - Blessé" />
+		<string id="LTE00555" text="Vous ne savez pas lire..." />
+		<string id="LTE00556" text="va lire" />
+		<string id="LTE00557" text="Lecture" />
+		<string id="LTE00558" text="Livres" />
+		<string id="LTE00559" text="Parchemins" />
+		<string id="LTE00560" text="Lire" />
+		<string id="LTE00561" text="Lit {BOOK_NAME}, ce qui augmentera la compétence {SKILL_NAME}." />
+		<string id="LTE00562" text="Ne lit rien actuellement." />
+		<string id="LTE00563" text="Bibliothèque du groupe" />
+		<string id="LTE00564" text="Arrêter la lecture" />
+		<string id="LTE00565" text="Le groupe n'a aucun livre" />
+		<string id="LTE00566" text="Le groupe n'a aucun parchemin" />
+		<string id="LTE00567" text="Ne sait pas lire" />
+		<string id="LTE00568" text="Apprend à lire" />
+		<string id="LTE00569" text="Bibliothèque" />
+		<string id="LTE00570" text="Il faut {MIN_INT} en INT pour apprendre à lire." />
+		<string id="LTE00571" text="Commencera bientôt à apprendre à lire." />
+		<string id="LTE00572" text="Cherchez des érudits en ville pour apprendre à lire." />
+		<string id="LTE00573" text="Ce n'est pas facile et cela prend du temps..." />
+		<string id="LTE00574" text="Choisissez un livre ou un parchemin à lire." />
+		<string id="LTE00575" text="Achetez des livres ou des parchemins aux marchands pour les lire." />
+		<string id="LTE00576" text="{HERO_NAME} a appris à lire !" />
+		<string id="LTE00577" text="{HERO_NAME} a fini de lire {BOOK_NAME}" />
+		<string id="LTE00578" text="{HERO_NAME} : compétence {BOOK_SKILL} augmentée de {BOOK_SKILL_INC}" />
+		<string id="LTE00579" text="Choisir automatiquement le livre suivant" />
+		<string id="LTE00580" text="Le compagnon choisira automatiquement le prochain livre à lire dès qu'il aura terminé le livre en cours" />
+		<string id="LTE00581" text="Sait lire !" />
+
+		<!-- ==================== Dialogs ==================== -->
+
+		<!-- Eadric-Male Welcome -->
+		<string id="LTE01000" text="Bien le bonjour, messire ! C'est un plaisir de vous accueillir à mon humble étal." />
+		<string id="LTE01001" text="Salutations, mon brave ! Je vous invite à parcourir les trésors littéraires que j'ai à vous offrir." />
+		<string id="LTE01002" text="Heureuse rencontre, mon ami ! Je suis ravi de vous accueillir devant la plus belle collection de livres du royaume." />
+		<string id="LTE01003" text="Je vous salue, noble seigneur ! Soyez le bienvenu pour explorer les richesses de mes livres." />
+		<string id="LTE01004" text="Bienvenue, messire ! C'est un honneur de vous voir parcourir ma sélection d'ouvrages." />
+		<string id="LTE01005" text="Salutations, aimable messire ! Soyez le bienvenu à mon humble étal, où savoir et merveilles vous attendent." />
+		<string id="LTE01006" text="Le bonjour à vous, mon bon ami ! Venez donc goûter au savoir et au divertissement que procurent mes livres." />
+		<string id="LTE01007" text="Salutations, mon estimé client ! C'est un plaisir de vous accueillir devant ma collection de belles lettres." />
+		<string id="LTE01008" text="Heureuse rencontre, messire ! Je vous invite à découvrir les délices littéraires qui vous attendent." />
+		<string id="LTE01009" text="Salutations, cher messire ! Je suis honoré de vous accueillir à mon étal, où vous trouverez une abondance de savoir et de sagesse." />
+
+		<!-- Eadric-Female Welcome -->
+		<string id="LTE01010" text="Bien le bonjour, madame ! C'est un plaisir de vous accueillir à mon humble étal." />
+		<string id="LTE01011" text="Salutations, belle dame ! Je vous invite à parcourir les trésors littéraires que j'ai à vous offrir." />
+		<string id="LTE01012" text="Heureuse rencontre, ma dame ! Je suis ravi de vous accueillir devant la plus belle collection de livres du royaume." />
+		<string id="LTE01013" text="Je vous salue, noble dame ! Soyez la bienvenue pour explorer les richesses de mes livres." />
+		<string id="LTE01014" text="Bienvenue, gente demoiselle ! C'est un honneur de vous voir parcourir ma sélection d'ouvrages." />
+		<string id="LTE01015" text="Salutations, aimable dame ! Soyez la bienvenue à mon humble étal, où savoir et merveilles vous attendent." />
+		<string id="LTE01016" text="Le bonjour à vous, chère dame ! Venez donc goûter au savoir et au divertissement que procurent mes livres." />
+		<string id="LTE01017" text="Salutations, mon estimée cliente ! C'est un plaisir de vous accueillir devant ma collection de belles lettres." />
+		<string id="LTE01018" text="Heureuse rencontre, belle damoiselle ! Je vous invite à découvrir les délices littéraires qui vous attendent." />
+		<string id="LTE01019" text="Salutations, chère dame ! Je suis honoré de vous accueillir à mon étal, où vous trouverez une abondance de savoir et de sagesse." />
+
+		<!-- Ingeborg-Male Welcome -->
+		<string id="LTE01020" text="Bienvenue, messire ! Puis-je vous proposer un livre sur la chevalerie ? Je crois qu'il siérait parfaitement à un chevalier aussi séduisant que vous." />
+		<string id="LTE01021" text="Salutations, monseigneur ! Votre présence rend ma journée plus radieuse que le soleil lui-même." />
+		<string id="LTE01022" text="Messire, il semble que les étoiles se soient alignées aujourd'hui, puisque j'ai le plaisir de rencontrer un homme aussi galant que vous." />
+		<string id="LTE01023" text="Béni soit le jour où mes yeux se sont posés sur vous, monseigneur. Comment puis-je vous être utile aujourd'hui ?" />
+		<string id="LTE01024" text="Bonjour, aimable messire ! Si seulement les pages de mes livres pouvaient être aussi charmantes que votre sourire." />
+		<string id="LTE01025" text="Quel plaisir de voir un homme d'un tel goût et d'un tel raffinement parcourir mon humble collection de livres." />
+		<string id="LTE01026" text="Vous devez être un érudit, monseigneur, car seul un homme d'une grande intelligence saurait apprécier la beauté de mes livres autant que vous." />
+		<string id="LTE01027" text="On dit que le savoir est une puissance, mais je dirais que la vraie puissance réside dans la compagnie d'un gentilhomme aussi séduisant que vous." />
+		<string id="LTE01028" text="Je dois l'avouer, monseigneur : cela fait un moment que j'attends qu'un homme de votre envergure visite ma modeste librairie." />
+		<string id="LTE01029" text="Vous devez être un homme de grand discernement pour avoir trouvé le chemin de mon petit coin du monde. Puis-je vous suggérer un ouvrage sur l'art de l'amour courtois, à la mesure de votre nature romantique ?" />
+
+		<!-- Ingeborg-Female Welcome -->
+		<string id="LTE01030" text="Bienvenue, belle dame ! Vous honorez ma modeste librairie de votre beauté et de votre charme." />
+		<string id="LTE01031" text="C'est un honneur de servir une femme d'un tel raffinement et d'une telle grâce. Puis-je vous recommander un ouvrage sur l'art de l'amour courtois, à la mesure de votre nature romantique ?" />
+		<string id="LTE01032" text="Ma dame, je ne puis m'empêcher d'être frappée par votre éclat. Permettez-moi de vous aider à trouver le livre parfait, digne de votre brillance." />
+		<string id="LTE01033" text="Il est rare de rencontrer une femme au goût aussi raffiné que le vôtre. J'ai hâte de vous montrer les trésors de ma collection." />
+		<string id="LTE01034" text="Quel bonheur de voir une femme de votre rang dans ma librairie ! Permettez-moi de vous présenter quelques-uns des plus beaux ouvrages du pays." />
+		<string id="LTE01035" text="Ma dame, votre présence ici est comme une bouffée d'air frais. Puis-je vous proposer un recueil de poésie à la mesure de votre beauté lyrique ?" />
+		<string id="LTE01036" text="Je n'ai jamais vu une femme d'une telle élégance et d'une telle grâce. Ce serait un honneur de vous aider à trouver l'ouvrage parfait, à la hauteur de votre raffinement." />
+		<string id="LTE01037" text="Il est évident que vous êtes une femme d'une grande intelligence et d'une grande sagesse. Puis-je vous suggérer un traité de philosophie ou de théologie à la mesure de votre esprit vif ?" />
+		<string id="LTE01038" text="Ma dame, je ne puis m'empêcher d'être captivée par votre charme et votre charisme. Permettez-moi d'être votre guide dans ce voyage littéraire." />
+		<string id="LTE01039" text="Quel plaisir de voir une femme de votre beauté et de votre intelligence dans ma modeste librairie. Puis-je vous suggérer un ouvrage d'histoire, à la mesure de votre savoir et de votre sagesse ?" />
+
+		<!-- Ahsan-Male Welcome -->
+		<string id="LTE01040" text="Que voulez-vous, maraud ? Parlez vite, j'ai mieux à faire que d'écouter vos sornettes." />
+		<string id="LTE01041" text="Qui ose troubler mon repos ? Dites ce que vous voulez ou disparaissez, avant que je lâche mes chiens sur vous." />
+		<string id="LTE01042" text="Qu'est-ce qui vous amène dans mon humble échoppe, misérable ? Si c'est une affaire qui vous intéresse, sachez que j'exige d'être payé d'avance." />
+		<string id="LTE01043" text="Parlez franchement, je n'ai aucune patience pour ceux qui me font perdre mon temps en bavardages. Que désirez-vous ?" />
+		<string id="LTE01044" text="Que cherchez-vous, voyageur ? Parlez vite, ma patience s'amenuise à chaque instant." />
+		<string id="LTE01045" text="Salutations, étranger. Quelle affaire vous amène ? Soyez bref, je ne suis pas d'humeur à recevoir de la compagnie." />
+		<string id="LTE01046" text="Qui ose troubler ma tranquillité ? Dites ce que vous avez à dire ou laissez-moi à mes pensées." />
+		<string id="LTE01047" text="Qu'est-ce qui vous amène à ma porte, imbécile ? Dites ce que vous voulez, ou je vous fais jeter dehors par mes gardes." />
+		<string id="LTE01048" text="Bien le bonjour, voyageur. Dites ce que vous voulez ou passez votre chemin. Je n'ai aucune patience pour les vagabonds sans but." />
+		<string id="LTE01049" text="Que voulez-vous, manant ? Je ne suis pas d'humeur aux politesses. Parlez vite et passez votre chemin." />
+
+		<!-- Ahsan-Female Welcome -->
+		<string id="LTE01050" text="Que voulez-vous, donzelle ? Parlez vite, je n'ai pas de temps pour les bavardages." />
+		<string id="LTE01051" text="Qui êtes-vous pour me déranger ? Dites ce que vous voulez ou subissez-en les conséquences." />
+		<string id="LTE01052" text="Qu'est-ce qui vous amène à ma porte, jouvencelle ? Si c'est une affaire qui vous intéresse, préparez-vous à payer le juste prix." />
+		<string id="LTE01053" text="Parlez franchement, je n'ai aucune patience pour ceux qui radotent. Que désirez-vous ?" />
+		<string id="LTE01054" text="Que cherchez-vous, femme ? Parlez vite, j'ai des affaires plus importantes à régler." />
+		<string id="LTE01055" text="Salutations, belle dame. Quelle affaire vous amène ? Soyez brève, mon temps est précieux." />
+		<string id="LTE01056" text="Qui ose interrompre ma solitude ? Dites ce que vous avez à dire ou passez votre chemin." />
+		<string id="LTE01057" text="Qu'est-ce qui vous amène, gamine ? Dites ce que vous voulez ou gare à ma colère." />
+		<string id="LTE01058" text="Bien le bonjour, voyageuse. Que cherchez-vous ? Parlez vite et passez votre chemin." />
+		<string id="LTE01059" text="Que voulez-vous, catin ? Je n'ai pas de temps pour vos manigances. Dites ce que vous voulez et disparaissez." />
+
+		<!-- Eadric-Male Bye -->
+		<string id="LTE01060" text="Adieu, messire ! Je vous remercie d'avoir honoré mon étal de votre présence." />
+		<string id="LTE01061" text="Adieu, mon ami ! Puisse le savoir que vous avez puisé dans mes livres enrichir votre vie." />
+		<string id="LTE01062" text="Adieu, cher messire ! Ce fut un plaisir de vous aider dans votre quête de savoir." />
+		<string id="LTE01063" text="Que Dieu vous garde, noble seigneur ! Je vous dis adieu en espérant vous revoir bientôt." />
+		<string id="LTE01064" text="Adieu, mon brave ! Je vous remercie de votre clientèle et vous souhaite un bon voyage." />
+		<string id="LTE01065" text="Que les bénédictions du Tout-Puissant soient sur vous, mon ami ! Adieu, et bonne lecture." />
+		<string id="LTE01066" text="Portez-vous bien, aimable messire ! J'espère que les livres que vous avez acquis vous apporteront joie et sagesse." />
+		<string id="LTE01067" text="Puisse votre soif de savoir ne jamais être étanchée, cher messire ! Adieu, et puissiez-vous trouver ce que vous cherchez." />
+		<string id="LTE01068" text="Adieu, mon estimé client ! Ce fut un honneur de vous servir et de partager avec vous mon amour des livres." />
+		<string id="LTE01069" text="Au revoir, cher messire ! Je vous dis adieu en espérant que mes livres vous offriront de longues heures de joie et d'apprentissage." />
+
+		<!-- Eadric-Female Bye -->
+		<string id="LTE01070" text="Adieu, belle dame ! Je vous remercie d'avoir honoré mon étal de votre présence." />
+		<string id="LTE01071" text="Adieu, chère madame ! Puisse le savoir que vous avez puisé dans mes livres enrichir votre vie." />
+		<string id="LTE01072" text="Adieu, mon estimée cliente ! Ce fut un plaisir de vous aider dans votre quête de savoir." />
+		<string id="LTE01073" text="Que Dieu vous garde, noble dame ! Je vous dis adieu en espérant vous revoir bientôt." />
+		<string id="LTE01074" text="Adieu, aimable dame ! Je vous remercie de votre clientèle et vous souhaite un bon voyage." />
+		<string id="LTE01075" text="Que les bénédictions du Tout-Puissant soient sur vous, chère dame ! Adieu, et bonne lecture." />
+		<string id="LTE01076" text="Portez-vous bien, gente demoiselle ! J'espère que les livres que vous avez acquis vous apporteront joie et sagesse." />
+		<string id="LTE01077" text="Puisse votre soif de savoir ne jamais être étanchée, chère dame ! Adieu, et puissiez-vous trouver ce que vous cherchez." />
+		<string id="LTE01078" text="Adieu, chère dame ! Ce fut un honneur de vous servir et de partager avec vous mon amour des livres." />
+		<string id="LTE01079" text="Au revoir, mon estimée cliente ! Je vous dis adieu en espérant que mes livres vous offriront de longues heures de joie et d'apprentissage." />
+
+		<!-- Ingeborg-Male Bye -->
+		<string id="LTE01080" text="Adieu, messire ! J'espère que vous reviendrez bientôt me voir, afin que nous poursuivions nos discussions sur la littérature et l'amour." />
+		<string id="LTE01081" text="À la prochaine, monseigneur. Puisse votre cœur être aussi empli de joie que votre esprit l'est de savoir." />
+		<string id="LTE01082" text="Ce fut un plaisir de vous servir, mon galant chevalier. J'attendrai avec impatience le jour où vous reviendrez dans ma modeste librairie." />
+		<string id="LTE01083" text="Je vous dis adieu, monseigneur. Puisse votre voyage être aussi lumineux et riche que les pages des livres que vous dévorez avec tant d'ardeur." />
+		<string id="LTE01084" text="À la prochaine, messire. Puisse le savoir que vous avez glané dans mes livres vous servir dans toutes vos entreprises." />
+		<string id="LTE01085" text="Adieu, monseigneur. Souvenez-vous que ma librairie est toujours ouverte à un homme de votre goût et de votre raffinement." />
+		<string id="LTE01086" text="Ce fut un honneur de servir un homme de votre rang et de votre prestance. Que vos voyages soient sûrs et que votre esprit ne cesse de s'élargir grâce aux mots de mes livres." />
+		<string id="LTE01087" text="À la prochaine, monseigneur. Puissent la beauté et la sagesse de mes livres être pour vous une source constante d'inspiration." />
+		<string id="LTE01088" text="Votre charmante compagnie va me manquer, cher messire. Puissent les leçons tirées de mes livres vous servir tout au long du chemin de la vie." />
+		<string id="LTE01089" text="Adieu, monseigneur. Sachez que le souvenir de votre présence restera dans mon cœur comme le parfum des roses de mon jardin." />
+
+		<!-- Ingeborg-Female Bye -->
+		<string id="LTE01090" text="Adieu, belle dame ! Puissent les pages des livres que vous avez choisis être aussi éclairantes et belles que votre visage." />
+		<string id="LTE01091" text="À la prochaine, ma dame. Puisse le savoir acquis dans mes livres rehausser encore votre intelligence déjà étincelante." />
+		<string id="LTE01092" text="Ce fut un plaisir de servir une femme d'une telle élégance et d'une telle grâce. Puisse le voyage de la vie vous apporter autant de joie que votre présence m'en a apporté." />
+		<string id="LTE01093" text="Je vous dis adieu, ma dame. Puissent la romance et la passion de mes livres vous inspirer des sommets toujours plus hauts d'amour et de dévotion." />
+		<string id="LTE01094" text="À la prochaine, chère dame. Puissent les mots de mes livres continuer à attiser le feu de votre propre créativité et de votre inspiration." />
+		<string id="LTE01095" text="Adieu, gente demoiselle. Souvenez-vous que ma librairie est toujours ouverte à une femme de votre beauté et de votre goût raffiné." />
+		<string id="LTE01096" text="Ce fut un honneur de vous servir, ma dame. Puissent les leçons de mes livres vous guider sur le chemin de la vie avec toujours plus de sagesse et de clairvoyance." />
+		<string id="LTE01097" text="À la prochaine, ma dame. Puissent le savoir et la beauté de mes livres être une source constante d'inspiration pour votre vie et vos entreprises." />
+		<string id="LTE01098" text="Votre charmante compagnie va me manquer, chère dame. Puissent le souvenir de nos conversations et le savoir de mes livres vous être d'un constant réconfort." />
+		<string id="LTE01099" text="Adieu, ma dame. Sachez que la beauté et l'éclat de votre présence resteront dans mon cœur comme la lueur des étoiles dans le ciel nocturne..." />
+
+		<!-- Ahsan-Male/Female Bye -->
+		<string id="LTE01100" text="Disparaissez de ma vue, sale rat pestilentiel !" />
+		<string id="LTE01101" text="Hors d'ici, infâme et méprisable maraud !" />
+		<string id="LTE01102" text="Que le diable vous emporte, et promptement !" />
+		<string id="LTE01103" text="Adieu, et ne remettez plus les pieds dans mon échoppe !" />
+		<string id="LTE01104" text="Partez sur-le-champ, et puissiez-vous ne plus jamais assombrir mon seuil !" />
+		<string id="LTE01105" text="Prenez congé sans tarder, avant que je ne prenne le mien." />
+		<string id="LTE01106" text="Votre compagnie devient de plus en plus pénible, hors d'ici, et vite !" />
+		<string id="LTE01107" text="Disparaissez de ma vue avant que j'appelle les gardes pour vous faire sortir !" />
+		<string id="LTE01108" text="Puisse votre route être longue et pénible, et puissiez-vous ne jamais trouver le repos !" />
+		<string id="LTE01109" text="Peu m'importe où vous allez, tant que c'est loin de moi !" />
+
+		<!-- Dialog-Other lines -->
+		<string id="LTE01200" text="J'aimerais voir ce que vous proposez" />
+		<string id="LTE01201" text="Je n'ai besoin de rien d'autre pour l'instant. Au revoir." />
+		<string id="LTE01202" text="Ce fut un plaisir de faire affaire avec vous. [ib:hip][rb:positive][rf:happy]" />
+		<string id="LTE01203" text="Avez-vous trouvé tout ce qu'il vous faut ? [ib:hip][rb:positive][rf:happy]" />
+		<string id="LTE01204" text="Satisfait ? [ib:hip][rb:negative][if:angry]" />
+		<string id="LTE01205" text="Merci !" />
+		<string id="LTE01206" text="Puis-je vous aider pour autre chose ? [ib:confident][if:convo_calm_friendly]" />
+		<string id="LTE01207" text="Autre chose ? [ib:confident][if:convo_calm_friendly]" />
+		<string id="LTE01208" text="Quoi encore ? [ib:hip][if:angry]" />
+		<string id="LTE01209" text="Pas assez d'or..." />
+		<string id="LTE01210" text="Acheté : " />
+		<string id="LTE01211" text="Vendu : " />
+
+		<!-- Dialog-Tavern Keeper -->
+		<string id="LTE01300" text="Oui, j'ai vu {VENDOR.FIRSTNAME} récemment. Jetez un œil en ville." />
+		<string id="LTE01301" text="J'ai entendu dire que vous trouveriez ce que vous cherchez à {SETTLEMENT}." />
+		<string id="LTE01302" text="Non, je n'en ai pas entendu parler ces derniers temps." />
+		<string id="LTE01303" text="Merci !" />
+		<string id="LTE01304" text="Autre chose ?" />
+		<string id="LTE01305" text="Messire, j'espérais acheter un livre et je me demandais si vous aviez vu des libraires dans les environs. Certains seraient-ils passés par votre établissement récemment ?" />
+		<string id="LTE01306" text="Dites-moi, aimable messire, auriez-vous eu vent de libraires voyageant dans les parages ? Je suis en quête de nouvelles lectures." />
+		<string id="LTE01307" text="Excusez-moi, messire. Je suis un amoureux des livres et je cherche un libraire. De tels marchands sont-ils passés par votre établissement récemment ?" />
+		<string id="LTE01308" text="Mon brave, j'ai besoin d'un livre et j'espérais trouver un marchand dans les environs. Auriez-vous vu de tels commerçants ces derniers jours ?" />
+		<string id="LTE01309" text="Salut à vous, messire. J'aime les livres et je cherche à en acheter un. Sauriez-vous si des libraires sont passés par ici dernièrement ?" />
+		<string id="LTE01310" text="Salutations, messire. Je suis en quête d'un livre et je me demandais si vous aviez croisé des libraires récemment. Je vous serais très obligé de m'aider dans mes recherches." />
+		<string id="LTE01311" text="Auriez-vous l'amabilité de me dire, messire, si des libraires ont été vus dans la région récemment ? J'ai hâte d'enrichir ma collection." />
+		<string id="LTE01312" text="Bonjour, messire. J'ai besoin d'un livre et j'espérais trouver un marchand dans les environs. Avez-vous entendu parler de tels marchands voyageant dans la région ?" />
+		<string id="LTE01313" text="J'espère que vous vous portez bien, messire. Je suis un lecteur passionné et je cherche un libraire. De telles personnes sont-elles venues dans votre établissement ces derniers temps ?" />
+		<string id="LTE01314" text="Excusez-moi, messire. Je suis un érudit et j'ai besoin de nouvelles lectures. Avez-vous vu des libraires dans les parages dernièrement ?" />
+		<string id="LTE01315" text="Messire, j'espérais agrandir ma bibliothèque et je me demandais si vous aviez vu des libraires dans la région récemment. Toute information me serait d'une grande aide." />
+		<string id="LTE01316" text="Connaissez-vous quelqu'un qui pourrait m'aider à améliorer mes compétences ?" />
+		<string id="LTE01317" text="Essayez de chercher à " />
+		<string id="LTE01318" text="Parfait ! Je vais le noter sur ma carte." />
+
+		<!-- Smithing parts -->
+		<string id="LTE01400" text="{WEAPON_ICON} Je voudrais apprendre à fabriquer de nouvelles pièces d'armes. Pouvez-vous m'enseigner ?" />
+		<string id="LTE01401" text="Pas aujourd'hui. Revenez demain." />
+		<string id="LTE01402" text="D'accord. Autre chose ?" />
+		<string id="LTE01404" text="Choisissez les pièces à apprendre :" />
+		<string id="LTE01405" text="Sélectionné : {PIECE_NAME} : {PRICE}{GOLD_ICON}" />
+		<string id="LTE01406" text="Vous n'avez pas assez d'or. Prix total : {PRICE}{GOLD_ICON}" />
+
+		<!-- Scholars -->
+		<string id="LTE01500" text="Dame Pique-Souvent" />
+		<string id="LTE01501" text="Dame Belle-Lame" />
+		<string id="LTE01502" text="Diable de l'Escrime" />
+		<string id="LTE01503" text="Bardé-de-Fer" />
+		<string id="LTE01504" text="Watnic le Troué" />
+		<string id="LTE01505" text="Simmon la Brute" />
+		<string id="LTE01506" text="Face-de-Serpent" />
+		<string id="LTE01507" text="Blorg le Fendeur" />
+		<string id="LTE01508" text="Dame Embroche-Tout" />
+		<string id="LTE01509" text="Lancegertha" />
+		<string id="LTE01510" text="Ingvar l'Empaleur" />
+		<string id="LTE01511" text="Gruumsh le Sinistre" />
+		<string id="LTE01512" text="Sire Robin de l'Arc" />
+		<string id="LTE01513" text="Rona Œil-d'Aigle" />
+		<string id="LTE01514" text="Dame Archère" />
+		<string id="LTE01515" text="Malik al-Qaws" />
+		<string id="LTE01516" text="Pik le Dokson" />
+		<string id="LTE01517" text="Malcolm le Rapide" />
+		<string id="LTE01518" text="Ève la Chasseresse" />
+		<string id="LTE01519" text="John Mauvais-Côté" />
+		<string id="LTE01520" text="Mavik Vog Kacher" />
+		<string id="LTE01521" text="Benzur le Gaucher" />
+		<string id="LTE01522" text="Œil-de-Corbeau" />
+		<string id="LTE01523" text="Maître Li" />
+		<string id="LTE01524" text="Dame Pied-à-l'Étrier" />
+		<string id="LTE01525" text="Sire Édouard l'Écuyer" />
+		<string id="LTE01526" text="Dame Isabella du Cheval de Fer" />
+		<string id="LTE01527" text="Cavalier Noir" />
+		<string id="LTE01528" text="Bonvouloir Gesturo" />
+		<string id="LTE01529" text="Dame Court-Toujours" />
+		<string id="LTE01530" text="Comtesse de Flexibourg" />
+		<string id="LTE01531" text="Ed le Roc" />
+		<string id="LTE01532" text="John Tord-Fer" />
+		<string id="LTE01533" text="Edward Fondpierre" />
+		<string id="LTE01534" text="Henry Cœur-de-Fourneau" />
+		<string id="LTE01535" text="Nicolas Né-de-l'Enclume" />
+		<string id="LTE01536" text="Lora la Curieuse" />
+		<string id="LTE01537" text="Ziggy le Pisteur" />
+		<string id="LTE01538" text="Struck l'Homme-des-Marais" />
+		<string id="LTE01539" text="Ixtamnetov l'Homme Vert" />
+		<string id="LTE01540" text="Vova le Perdant" />
+		<string id="LTE01541" text="Voral Tête-de-Cheval" />
+		<string id="LTE01542" text="Gerda Prenkitou" />
+		<string id="LTE01543" text="Gen « Derrière-la-Flaque »" />
+		<string id="LTE01544" text="Kasap Main-Sanglante" />
+		<string id="LTE01545" text="Niko le Voleur d'Enfants" />
+		<string id="LTE01546" text="Alex le Pilleur de Latrines" />
+		<string id="LTE01547" text="Uskii le Libérateur" />
+		<string id="LTE01548" text="Dame Avenante" />
+		<string id="LTE01549" text="Dame Pleine-de-Grâce" />
+		<string id="LTE01550" text="Dame Charmelle" />
+		<string id="LTE01551" text="Baronne Adorabelle" />
+		<string id="LTE01552" text="Sire Bêêêlot" />
+		<string id="LTE01553" text="Seigneur Xi" />
+		<string id="LTE01554" text="Titus Valerius" />
+		<string id="LTE01555" text="Maître Greenzee" />
+		<string id="LTE01556" text="Simon le Rusé" />
+		<string id="LTE01557" text="Moïshe le Compteur" />
+		<string id="LTE01558" text="Jacob le Joaillier" />
+		<string id="LTE01559" text="Mustafa Paume-d'Or" />
+		<string id="LTE01560" text="Dondon Silenius" />
+		<string id="LTE01561" text="Petro la Mule" />
+		<string id="LTE01562" text="Reginald de Cornhill" />
+		<string id="LTE01563" text="Ursula l'Imperturbable" />
+		<string id="LTE01564" text="Vet le Manche-à-Balai" />
+		<string id="LTE01565" text="Madame Tonicia" />
+		<string id="LTE01566" text="Baron Mercure" />
+		<string id="LTE01567" text="Archiduc Paracelsus Magnificus" />
+		<string id="LTE01568" text="Hilda Broie-Rouages" />
+		<string id="LTE01569" text="Jason le Bâtisseur" />
+		<string id="LTE01570" text="Cédric le Constructeur" />
+		<string id="LTE01571" text="Erik le Constructeur de Bateaux" />
+
+		<!-- Book Stash / errors -->
+		<string id="LTE_IVxtevp" text="Fermer" />
+		<string id="LTE_HlSCpug" text="INT : {INT_VALUE}" />
+		<string id="LTE_57VY1h0" text="ERREUR LT_Education : AUCUN LIVRE ! Réinstallez le mod. Utilisez 7-Zip pour extraire l'archive." />
+		<string id="LTE_WH3jEnq" text="LT_Education : impossible de créer les libraires... Réinstallez le mod." />
+		<string id="LTE_Ij9eNgV" text="LTEducation : impossible d'appeler OpenPart, version du jeu incompatible !" />
+		<string id="LTE_PVfXG2f" text="LT_Education : une erreur s'est produite lors du chargement du mod dans votre partie actuelle." />
+	</strings>
+</base>

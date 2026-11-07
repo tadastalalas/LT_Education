@@ -6,8 +6,8 @@ using TaleWorlds.CampaignSystem.GameMenus;
 using TaleWorlds.CampaignSystem.Settlements;
 using TaleWorlds.Core;
 using TaleWorlds.Engine.GauntletUI;
-using TaleWorlds.GauntletUI.Data;
 using TaleWorlds.Library;
+using TaleWorlds.ScreenSystem;
 
 namespace LT_Education
 {
@@ -19,19 +19,25 @@ namespace LT_Education
         private bool _debug = false;
 
         private static GauntletLayer? _gauntletLayer;
-        private static GauntletMovie? _gauntletMovie;
+        private static GauntletMovieIdentifier? _gauntletMovie;
         private static EducationPopupVM? _popupVM;
+        private static ScreenBase? _popupScreen;
         
         readonly int _booksInMod = 36;              // how many books are actually implemented into the mod
         IEnumerable<ItemObject>? _bookList;         // all education books in the game
         List<Hero>? _vendorList;                    // all book vendors in the game
+        private Hero? _pendingRelationVendor;       // vendor greeting relation change, applied in the greeting consequence
+        private int _pendingRelationChange;
 
         List<ItemObject> _tradeRoster = new();      // Item Roster for book trade
 
         public readonly int ScoutingLevelToSeeScholarIcons = 200;    // how advanced party scout should be to see scholar icons?
 
+        private const int DefaultMinINTToRead = 3;  // minimum INT to be able to learn to read
+        private const int DefaultTrainingRest = 10; // hours of rest required between scholar trainings
+
         private float _canRead;
-        private int _minINTToRead = 3;              // minimum INT to be able to learn to read
+        private int _minINTToRead = DefaultMinINTToRead;
         private readonly int _readPrice = 10;       // price to learn to read /h
         private int _lastHourOfLearning;            // to keep track for paid hours
 
@@ -51,7 +57,7 @@ namespace LT_Education
         private int _trainingInterrupted = 0;
         private bool _inTraining = false;
         private readonly int _trainingDuration = 8;
-        private int _trainingRest = 10;
+        private int _trainingRest = DefaultTrainingRest;
         private int _trainingScholarIndex = -1;
         private List<Hero> _trainingHeroList = new();
 
@@ -65,6 +71,10 @@ namespace LT_Education
         {
 
             Instance = this;
+
+            // drop UI state left over from a previous game in this session
+            ResetPopupState();
+            LT.UI.LTUIManager.Instance.Reset();
 
             this._canRead = 0;
             this._bookInProgress = -1;
@@ -96,6 +106,8 @@ namespace LT_Education
             CampaignEvents.GameMenuOpened.AddNonSerializedListener(this, new Action<MenuCallbackArgs>(this.OnGameMenuOpened));
 
             CampaignEvents.HeroComesOfAgeEvent.AddNonSerializedListener(this, new Action<Hero>(this.OnHeroComesOfAge));
+
+            CampaignEvents.CanHeroDieEvent.AddNonSerializedListener(this, CanVendorDie);
 
             //CampaignEvents.SettlementEntered.AddNonSerializedListener(this, new Action<MobileParty, Settlement, Hero>(this.OnSettlementEntered));
             //CampaignEvents.AfterSettlementEntered.AddNonSerializedListener(this, new Action<MobileParty, Settlement, Hero>(this.OnAfterSettlementEntered));  
@@ -140,8 +152,11 @@ namespace LT_Education
             }
             else 
             {
+                if (Instance == null) return $"Debug failed";
+
                 Instance._debug = false;
-                Instance._minINTToRead = 4;
+                Instance._minINTToRead = DefaultMinINTToRead;
+                Instance._trainingRest = DefaultTrainingRest;
                 return $"Debug disabled";
             }
         }
@@ -160,6 +175,9 @@ namespace LT_Education
 
             // add [Read] to the read books
             MarkReadBooks();
+
+            this._companionEducationData ??= new List<LTECompanionEducationData>();
+            this._trainingHeroList ??= new List<Hero>();
 
             this._LTECompanions = new LTECompanions(this._companionEducationData);
         }
@@ -229,9 +247,12 @@ namespace LT_Education
         {                     
             if (_vendorList == null || _bookList == null) return;
             
+            // CreateVendors already restocked everyone; a second restock would remove 3 more books
+            bool replaced = ReplaceDeadVendors();
+
             RelocateVendorsToOtherTowns();
 
-            GiveBooksToVendors();
+            if (!replaced) GiveBooksToVendors();
         }
 
 
@@ -271,6 +292,10 @@ namespace LT_Education
         }
 
 
+        // Save keys:
+        // LTEducation_bookInProgress, LTEducation_bookProgress, LTEducation_canRead, LTEducation_scholarSettlements,
+        // LTEducation_companionEducationData, LTEducation_inTraining, LTEducation_startTimeOfTraining,
+        // LTEducation_trainingInterrupted, LTEducation_trainingScholarIndex, LTEducation_trainingHeroList
         public override void SyncData(IDataStore dataStore)
         {          
             dataStore.SyncData<int>("LTEducation_bookInProgress", ref this._bookInProgress);
@@ -280,6 +305,13 @@ namespace LT_Education
             dataStore.SyncData<Settlement[]>("LTEducation_scholarSettlements", ref this._scholarSettlements);
 
             dataStore.SyncData<List<LTECompanionEducationData>>("LTEducation_companionEducationData", ref this._companionEducationData);
+
+            // scholar training in progress (so a save made during training resumes it correctly)
+            dataStore.SyncData<bool>("LTEducation_inTraining", ref this._inTraining);
+            dataStore.SyncData<CampaignTime>("LTEducation_startTimeOfTraining", ref this._startTimeOfTraining);
+            dataStore.SyncData<int>("LTEducation_trainingInterrupted", ref this._trainingInterrupted);
+            dataStore.SyncData<int>("LTEducation_trainingScholarIndex", ref this._trainingScholarIndex);
+            dataStore.SyncData<List<Hero>>("LTEducation_trainingHeroList", ref this._trainingHeroList);
         }
 
 

@@ -25,7 +25,8 @@ namespace LT_Education
 
             // to allow name translations
             //_vendorList = Hero.FindAll((Hero x) => x.Name.Contains("Book Vendor")); // this does not allow to translate a name
-            foreach (Hero hero in Hero.FindAll((Hero x) => x.Occupation == Occupation.Special))
+            // FindAll includes dead heroes; skip dead vendors so CreateVendors makes new ones
+            foreach (Hero hero in Hero.FindAll((Hero x) => x.Occupation == Occupation.Special && !x.IsDead))
             {
                 if (hero.CharacterObject != null && hero.CharacterObject.OriginalCharacter != null && hero.CharacterObject.OriginalCharacter.StringId.Contains("lt_education_book_vendor"))
                 {
@@ -52,7 +53,7 @@ namespace LT_Education
 
             if (lt_vendor1_character_object == null || lt_vendor2_character_object == null || lt_vendor3_character_object == null)
             {
-                LTLogger.IMRed("LT_Education: Can't create book vendors... Reinstall the mod.");
+                LTLogger.IMRed("{=LTE_WH3jEnq}LT_Education: Can't create book vendors... Reinstall the mod.");
                 return;
             }
 
@@ -188,9 +189,10 @@ namespace LT_Education
 
                     if (vendor.IsDead)
                     {
-                        //handling special case when vendor is dead but somehow still in the settlement -> resurrect
-                        //when vendor truly dies, CurrentSettlement is null and he is gone
-                        vendor.ChangeState(Hero.CharacterStates.Active);                     
+                        // handling special case when vendor is dead but somehow still in the settlement -> resurrect
+                        // when vendor truly dies, CurrentSettlement is null and he is gone
+                        // bringing a vendor back runs the game's stat development, which crashes if HeroDeveloper is missing
+                        if (vendor.HeroDeveloper != null) vendor.ChangeState(Hero.CharacterStates.Active);
                     }
                     else
                     {
@@ -222,6 +224,10 @@ namespace LT_Education
 
             if (location == null) return;
 
+            // remove the vendor's previous spot first, otherwise every menu open adds another copy
+            Location? oldLocation = LocationComplex.Current.GetLocationOfCharacter(vendor);
+            oldLocation?.RemoveCharacter(vendor);
+
             location.AddCharacter(locationCharacter);
 
         }
@@ -237,6 +243,8 @@ namespace LT_Education
             {
                 if (vendor.CurrentSettlement != null)
                 {
+                    // Teleporting a dead/disabled hero turns it back to active, and the game's OnHeroActivated handler crashes on it
+                    if (!vendor.IsActive) continue;
                     List<Settlement> closestSettlements = LTHelpers.GetClosestTownsFromSettlement(vendor.CurrentSettlement, 4);
                     if (closestSettlements.Count > 0)
                     {
@@ -247,6 +255,7 @@ namespace LT_Education
                 else
                 {
                     // somehow vendor.CurrenSettlement == null
+                    if (!vendor.IsActive) continue;
                     Settlement? rndTown = LTHelpers.GetRandomTown();
                     if (rndTown != null)
                     {
@@ -254,6 +263,22 @@ namespace LT_Education
                     }
                 }
             }
+        }
+
+
+        // returns true if a dead vendor was replaced (CreateVendors also restocks every vendor)
+        private bool ReplaceDeadVendors()
+        {
+            if (_vendorList == null || _vendorList.RemoveAll(v => v.IsDead) == 0) return false;
+            CreateVendors();
+            return true;
+        }
+
+
+        // vendors never die of old age (Hero.CanDie asks this event; other causes still apply)
+        private void CanVendorDie(Hero hero, KillCharacterAction.KillCharacterActionDetail causeOfDeath, ref bool result)
+        {
+            if (causeOfDeath == KillCharacterAction.KillCharacterActionDetail.DiedOfOldAge && _vendorList != null && _vendorList.Contains(hero)) result = false;
         }
 
 
@@ -326,11 +351,13 @@ namespace LT_Education
         }
 
 
-        private void ChangeRelationWithVendor(Hero vendor)
+        // relation change is computed when the greeting is chosen and applied only when it is actually said,
+        // because the condition can be evaluated more than once per conversation
+        private int GetVendorMeetingRelationChange(Hero vendor)
         {
 
-            // Eadric   +4-6 once per week on meeting
-            // Ingeborg +9-11 once per week on meeting
+            // Eadric   +4-5 once per week on meeting
+            // Ingeborg +9-10 once per week on meeting
             // Ahsan    -3 on each meeting :D
 
             Random rand = new();
@@ -340,16 +367,27 @@ namespace LT_Education
 
             if (vendorID == 1 && lastMeetingTimeWithPlayer.ElapsedDaysUntilNow > 7)  // Eadric
             {
-                ChangeRelationAction.ApplyRelationChangeBetweenHeroes(Hero.MainHero, vendor, 4 + rand.Next(2), false);
+                return 4 + rand.Next(2);
             } 
             else if (vendorID == 2 && lastMeetingTimeWithPlayer.ElapsedDaysUntilNow > 7)  // Ingeborg
             {
-                ChangeRelationAction.ApplyRelationChangeBetweenHeroes(Hero.MainHero, vendor, 9 + rand.Next(2), false);
+                return 9 + rand.Next(2);
             }
             else if (vendorID == 3)   // Ahsan
             {
-                ChangeRelationAction.ApplyRelationChangeBetweenHeroes(Hero.MainHero, vendor, -3, false);
+                return -3;
             }
+            return 0;
+        }
+
+        private void ApplyPendingVendorRelationChange()
+        {
+            if (_pendingRelationVendor != null && _pendingRelationChange != 0)
+            {
+                ChangeRelationAction.ApplyRelationChangeBetweenHeroes(Hero.MainHero, _pendingRelationVendor, _pendingRelationChange, false);
+            }
+            _pendingRelationVendor = null;
+            _pendingRelationChange = 0;
         }
 
 
@@ -360,7 +398,7 @@ namespace LT_Education
 
             foreach (Hero vendor in _vendorList)
             {
-                LTLogger.IMGreen(vendor.FirstName.ToString() + " in " + vendor.CurrentSettlement.ToString());
+                LTLogger.IMGreen(vendor.FirstName.ToString() + " in " + (vendor.CurrentSettlement?.Name?.ToString() ?? "-"));
             }
         }
 

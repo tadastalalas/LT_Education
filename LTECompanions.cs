@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
 using TaleWorlds.Localization;
+using TaleWorlds.ObjectSystem;
 using LT.Helpers;
 using LT.Logger;
 using LT.UI.MapNotification;
@@ -27,6 +28,9 @@ namespace LT_Education
             if (_debug) LTLogger.IMRed("ProcessCompanionsEducation");
 
             List<Hero> heroList = LTHelpers.GetPartyCompanionsList();
+
+            ReturnBooksFromHeroesWhoLeftClan(heroList);
+
             if (heroList.Count == 0) return;
 
             foreach (Hero hero in heroList)
@@ -84,7 +88,7 @@ namespace LT_Education
 
                     if (bookIndex < 0 || bookIndex > 99)
                     {
-                        heroData.BookInProgress = -1;
+                        LT_EducationBehaviour.Instance.HeroStopReadingAndReturnBookToParty(hero);
                         continue;
                     }
 
@@ -139,6 +143,53 @@ namespace LT_Education
 
         }
 
+
+
+        // A reader who died or left the player's clan would keep the party's book forever - give it back.
+        // Readers temporarily away (governor, own party) keep it; their reading just pauses.
+        private void ReturnBooksFromHeroesWhoLeftClan(List<Hero> partyCompanions)
+        {
+            for (int i = 0; i < _companionEducationData.Count; i++)
+            {
+                LTECompanionEducationData data = _companionEducationData[i];
+                if (data.BookInProgress == -1) continue;
+                if (IsHeroInList(partyCompanions, data.Id)) continue;
+
+                Hero? hero = FindHeroById(data.Id);
+                if (hero == null)
+                {
+                    data.BookInProgress = -1;
+                    continue;
+                }
+                if (hero == Hero.MainHero) continue;
+                if (hero.IsAlive && hero.Clan == Clan.PlayerClan) continue;
+
+                if (_debug) LTLogger.IMRed(hero.Name.ToString() + " left the clan, book returned");
+                LT_EducationBehaviour.Instance.HeroStopReadingAndReturnBookToParty(hero);
+            }
+        }
+
+        private static bool IsHeroInList(List<Hero> heroList, MBGUID id)
+        {
+            for (int i = 0; i < heroList.Count; i++)
+            {
+                if (heroList[i].Id == id) return true;
+            }
+            return false;
+        }
+
+        private static Hero? FindHeroById(MBGUID id)
+        {
+            foreach (Hero hero in Hero.AllAliveHeroes)
+            {
+                if (hero.Id == id) return hero;
+            }
+            foreach (Hero hero in Hero.DeadOrDisabledHeroes)
+            {
+                if (hero.Id == id) return hero;
+            }
+            return null;
+        }
 
 
         public void CompanionComesOfAge(Hero hero)

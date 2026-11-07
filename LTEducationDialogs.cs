@@ -4,14 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.Actions;
-using TaleWorlds.CampaignSystem.Inventory;
 using TaleWorlds.CampaignSystem.Roster;
 using TaleWorlds.CampaignSystem.Settlements;
 using TaleWorlds.Core;
 using TaleWorlds.Localization;
 using LT.Logger;
 using LT.Helpers;
-using TaleWorlds.MountAndBlade;
 
 namespace LT_Education
 {
@@ -101,7 +99,7 @@ namespace LT_Education
             // Book Vendor
             {
                 // greeting
-                starter.AddDialogLine("bookvendor_talk", "start", "bookvendor", "{=!}{VOICED_LINE}{TEXT_LINE}", BookVendorStartTalkOnCondition, null, 110, null);
+                starter.AddDialogLine("bookvendor_talk", "start", "bookvendor", "{=!}{VOICED_LINE}{TEXT_LINE}", BookVendorStartTalkOnCondition, ApplyPendingVendorRelationChange, 110, null);
 
 
                 starter.AddPlayerLine("bookvendor_talk", "bookvendor", "bookvendor_yes", "{=LTE01200}I would like to see what you have", null, () => {
@@ -139,7 +137,7 @@ namespace LT_Education
                     Town town = Settlement.CurrentSettlement.Town;
 
                     // Town name and gold
-                    InventoryManager.OpenScreenAsTrade(itemRoster2, town, InventoryManager.InventoryCategoryType.None, new InventoryManager.DoneLogicExtrasDelegate(OnInventoryScreenDone));
+                    InventoryScreenHelper.OpenScreenAsTrade(itemRoster2, town, InventoryScreenHelper.InventoryCategoryType.None, OnInventoryScreenDone);
 
 
                 }, 110, (out TextObject explanation) =>
@@ -151,7 +149,7 @@ namespace LT_Education
                     }
                     else
                     {
-                        explanation = TextObject.Empty;
+                        explanation = TextObject.GetEmpty();
                         return true;
                     }
                 });
@@ -206,7 +204,7 @@ namespace LT_Education
                         }
                         else
                         {
-                            explanation = TextObject.Empty;
+                            explanation = TextObject.GetEmpty();
                             return true;
                         }
                     });
@@ -322,7 +320,8 @@ namespace LT_Education
 
             FormatVendorRandomWelcomeText(GetVendorID(co));
 
-            ChangeRelationWithVendor(co.HeroObject);
+            _pendingRelationVendor = co.HeroObject;
+            _pendingRelationChange = co.HeroObject != null ? GetVendorMeetingRelationChange(co.HeroObject) : 0;
 
             return true;
         }
@@ -512,7 +511,7 @@ namespace LT_Education
             // Bye voiced line
             string voicedLine;
             TextObject textLine = new("NOT IMPLEMENTED");
-            TextObject bodyFace = TextObject.Empty;
+            TextObject bodyFace = TextObject.GetEmpty();
             int randLine = rand.Next(10) + 1;
 
             string[] eadric_lines_m = new string[]

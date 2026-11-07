@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LanguageData id="Polski">
-  <LanguageFile xml_path="PL/PolishTranslation-pol.xml" />
-  <VoiceFile xml_path="VoicedLines/voiced_lines_en.xml" />
+<LanguageData id="Polski" name="Polski" subtitle_extension="pl" supported_iso="pl,pol,pl-pl" text_processor="TaleWorlds.Localization.TextProcessor.LanguageProcessors.PolishTextProcessor" under_development="false">
+	<LanguageFile xml_path="PL/std_module_strings_xml_pol.xml" />
+	<VoiceFile xml_path="VoicedLines/voiced_lines_en.xml" />
 </LanguageData>

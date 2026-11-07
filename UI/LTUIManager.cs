@@ -50,5 +50,12 @@ namespace LT.UI
             _mapView?.Refresh();
         }
 
+        // forget views from a previous game; their screens are already gone, so don't touch them
+        public void Reset()
+        {
+            _mapView = null;
+            _menuOnClose = "";
+        }
+
     }
 }

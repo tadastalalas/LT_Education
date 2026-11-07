@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="繁體中文" />
+	</tags>
+	<strings>
+
+		<!-- Releasing translations separate from the main mod without my permission are not allowed. -->
+
+		<!-- General -->
+		<string id="LTE00000" text="和" />
+
+		<!-- Vendors -->
+		<string id="LTE00301" text="艾德里克" />
+		<string id="LTE00302" text="英格柏格" />
+		<string id="LTE00303" text="阿赫桑" />
+		<string id="LTE00304" text="（書商）" />
+		<string id="LTE00305" text="艾德里克是一位中年書商，來自帝國，卻佯稱自己來自北方。他身材矮小，總穿著一身修士袍，說起話來聲音悅耳，而且彬彬有禮到了極點。然而，艾德里克也十分神秘，凡事小心謹慎，彷彿在躲避著什麼人。他的過去籠罩在重重秘密之中，總是對身邊的人有所隱瞞，從不透露太多關於自己的事。儘管如此，他仍以淵博的文學學識和無可挑剔的待客之道而聞名。" />
+		<string id="LTE00306" text="英格柏格是一位來自諾德的年輕金髮姑娘，身材高挑，懂得保護自己。她的父親曾是一名軍人，教會了她如何戰鬥；而她的母親則讓她愛上了文學。她四處遊歷販書，一路上靠著自己的本領保護自己。儘管外表強悍，英格柏格卻有一顆善良的心，並以豐富的文學學識而聞名。" />
+		<string id="LTE00307" text="阿赫桑是一位來自南方村莊的老人，向來以脾氣火爆出名。儘管性情粗魯，他對書籍卻有著深厚的熱愛，最終成為一位受人敬重的書商。隨著年紀漸長，阿赫桑變得越來越孤僻，躲進書堆裡，把書本當作抵擋外界的盾牌。儘管脾氣暴躁，他的學識與對文學的投入仍令人敬佩。" />
+
+		<!-- Books/Scrolls -->
+		<string id="LTE00401" text="書籍：劍盾研究" />
+		<string id="LTE00402" text="書籍：雙手斧指南" />
+		<string id="LTE00403" text="書籍：長矛史話" />
+		<string id="LTE00404" text="書籍：弓手的精準" />
+		<string id="LTE00405" text="書籍：弩之編年史" />
+		<string id="LTE00406" text="書籍：精通投擲兵器" />
+		<string id="LTE00407" text="書籍：駕馭戰馬" />
+		<string id="LTE00408" text="書籍：戰士跑動指南" />
+		<string id="LTE00409" text="書籍：雄偉的熔爐" />
+		<string id="LTE00410" text="書籍：真正的斥候" />
+		<string id="LTE00411" text="書籍：指揮官戰術" />
+		<string id="LTE00412" text="書籍：暗影之中" />
+		<string id="LTE00413" text="書籍：迷人的談吐" />
+		<string id="LTE00414" text="書籍：領主統御學問" />
+		<string id="LTE00415" text="書籍：公會商業指南" />
+		<string id="LTE00416" text="書籍：有效的資源管理" />
+		<string id="LTE00417" text="書籍：外科醫師記錄簿" />
+		<string id="LTE00418" text="書籍：工程建築年鑑" />
+		<string id="LTE00419" text="卷軸：鋼劍傳奇" />
+		<string id="LTE00420" text="卷軸：戰錘手記" />
+		<string id="LTE00421" text="卷軸：偃月刀指南" />
+		<string id="LTE00422" text="卷軸：弓與箭小冊" />
+		<string id="LTE00423" text="卷軸：弩術大全" />
+		<string id="LTE00424" text="卷軸：飛鏢與標槍日誌" />
+		<string id="LTE00425" text="卷軸：騎兵編年檔案" />
+		<string id="LTE00426" text="卷軸：強身寓言" />
+		<string id="LTE00427" text="卷軸：鑄劍摘要" />
+		<string id="LTE00428" text="卷軸：開路者手札" />
+		<string id="LTE00429" text="卷軸：戰鬥戰術手稿" />
+		<string id="LTE00430" text="卷軸：盜賊往事" />
+		<string id="LTE00431" text="卷軸：魅力之術" />
+		<string id="LTE00432" text="卷軸：統御課程" />
+		<string id="LTE00433" text="卷軸：商人回憶錄" />
+		<string id="LTE00434" text="卷軸：管家帳簿" />
+		<string id="LTE00435" text="卷軸：療方與藥譜" />
+		<string id="LTE00436" text="卷軸：築城公式" />
+
+		<!-- Menus / IM / Popups -->
+		<string id="LTE00500" text="學習識字" />
+		<string id="LTE00501" text="沒有人願意教你讀書識字。他們覺得你根本沒救了……（智力 &lt; {MIN_INT}）" />
+		<string id="LTE00502" text="你找到一位學者，他同意教你讀書識字，每小時收費{READ_PRICE}{GOLD_ICON}。" />
+		<string id="LTE00503" text="開始吧！" />
+		<string id="LTE00504" text="離開" />
+		<string id="LTE00505" text="下次再說吧……" />
+		<string id="LTE00506" text="學者先從字母的概念以及每個字母的發音教起，接著教你基本的單字，示範如何唸出它們，以及如何在上下文中讀懂它們。學者特別強調，正確的發音與清晰的咬字，是準確閱讀和理解文字的關鍵。" />
+		<string id="LTE00507" text="已支付{READ_PAID}{GOLD_ICON}" />
+		<string id="LTE00508" text="金錢不足，無法繼續學習……" />
+		<string id="LTE00509" text="先到此為止" />
+		<string id="LTE00510" text="當地村民一臉困惑。他們彼此低聲商量了一會兒後，其中最機靈的一個指了指城鎮的方向……" />
+		<string id="LTE00511" text="當地人一臉茫然。他們搔了搔頭，建議你去城鎮看看……" />
+		<string id="LTE00512" text="管理你的學習" />
+		<string id="LTE00513" text="正在閱讀：{newline}{newline}{READING_DATA}" />
+		<string id="LTE00514" text="你目前沒有在閱讀任何東西。" />
+		<string id="LTE00515" text="選擇要閱讀的書" />
+		<string id="LTE00516" text="這本書看起來值得一讀" />
+		<string id="LTE00517" text="你已經讀過這本書了。" />
+		<string id="LTE00518" text="從現在起，你將閱讀：" />
+		<string id="LTE00519" text="選擇" />
+		<string id="LTE00520" text="將閱讀：" />
+		<string id="LTE00521" text="決定什麼都不讀" />
+		<string id="LTE00522" text="你學會識字了！" />
+		<string id="LTE00523" text="讓全天下都知道，你是個識字的人了！" />
+		<string id="LTE00524" text="你已經沒有先前在讀的那本書了……" />
+		<string id="LTE00525" text="正在閱讀{READING_DATA}" />
+		<string id="LTE00526" text="讀完了{FINISHED_BOOK}！" />
+		<string id="LTE00527" text="你的{BOOK_SKILL}技能提升了{BOOK_SKILL_INC}點！" />
+		<string id="LTE00528" text="你的{BOOK_SKILL}技能已經太高了，{newline}讀這本書只是白費時間……" />
+		<string id="LTE00529" text="閱讀完畢" />
+		<string id="LTE00530" text="繼續" />
+		<string id="LTE00531" text=" [已讀]" />
+		<string id="LTE00532" text="開始閱讀" />
+		<string id="LTE00533" text="初級" />
+		<string id="LTE00534" text="中級" />
+		<string id="LTE00535" text="高級" />
+		<string id="LTE00536" text="專家" />
+		<string id="LTE00537" text="拜見學者" />
+		<string id="LTE00538" text="這裡沒有學者……" />
+		<string id="LTE00539" text="或許酒館老闆能幫上忙……" />
+		<string id="LTE00540" text="{SCHOLAR_NAME}{newline}{newline}提供{SKILL_NAME}訓練（{SCHOLAR_LEVEL}）{newline}{newline}價格：{SCHOLAR_PRICE}{GOLD_ICON}/小時　時長：{TRAINING_DURATION}小時" />
+		<string id="LTE00541" text="誰要參加？" />
+		<string id="LTE00542" text="最近才受過訓練，需要休息" />
+		<string id="LTE00543" text="選擇參加訓練的人" />
+		<string id="LTE00544" text="{PARTICIPANT_NUMBER}名學員，每人收費{PERSON_PRICE}。{newline}{newline}總價：{TOTAL_PRICE}" />
+		<string id="LTE00545" text="我會再回來的……" />
+		<string id="LTE00546" text="開始訓練？" />
+		<string id="LTE00547" text="{SCHOLAR_NAME}已準備好開始{SKILL_NAME}訓練。{newline}{newline}{PARTICIPANT_NUMBER}名學員的訓練費用共計{TOTAL_PRICE}。{newline}{newline}要開始嗎？" />
+		<string id="LTE00548" text="{SCHOLAR_NAME}授課：{SKILL_NAME}（{SCHOLAR_LEVEL}）" />
+		<string id="LTE00549" text="我改變主意了……" />
+		<string id="LTE00550" text="中斷" />
+		<string id="LTE00551" text="由於學員不夠專心，訓練品質下降了……" />
+		<string id="LTE00552" text="訓練結束" />
+		<string id="LTE00553" text="所有可參加的部隊成員" />
+		<string id="LTE00554" text="無法參加－負傷" />
+		<string id="LTE00555" text="你還不識字……" />
+		<string id="LTE00556" text="將閱讀" />
+		<string id="LTE00557" text="正在閱讀" />
+		<string id="LTE00558" text="書籍" />
+		<string id="LTE00559" text="卷軸" />
+		<string id="LTE00560" text="閱讀" />
+		<string id="LTE00561" text="正在閱讀{BOOK_NAME}，將提升{SKILL_NAME}技能。" />
+		<string id="LTE00562" text="目前沒有在閱讀任何東西。" />
+		<string id="LTE00563" text="部隊藏書" />
+		<string id="LTE00564" text="停止閱讀" />
+		<string id="LTE00565" text="部隊沒有任何書籍" />
+		<string id="LTE00566" text="部隊沒有任何卷軸" />
+		<string id="LTE00567" text="不識字" />
+		<string id="LTE00568" text="正在學習識字" />
+		<string id="LTE00569" text="藏書" />
+		<string id="LTE00570" text="需要{MIN_INT}點智力才能學習識字。" />
+		<string id="LTE00571" text="即將開始學習識字。" />
+		<string id="LTE00572" text="前往城鎮尋找學者來學習識字。" />
+		<string id="LTE00573" text="這可不容易，而且需要時間……" />
+		<string id="LTE00574" text="選擇要閱讀的書籍或卷軸。" />
+		<string id="LTE00575" text="向書商購買書籍或卷軸來閱讀。" />
+		<string id="LTE00576" text="{HERO_NAME}學會識字了！" />
+		<string id="LTE00577" text="{HERO_NAME}讀完了{BOOK_NAME}" />
+		<string id="LTE00578" text="{HERO_NAME}：{BOOK_SKILL}技能提升了{BOOK_SKILL_INC}點" />
+		<string id="LTE00579" text="自動選擇下一本書" />
+		<string id="LTE00580" text="讀完目前的書之後，同伴會自動選擇下一本要讀的書" />
+		<string id="LTE00581" text="識字了！" />
+
+		<!-- ==================== Dialogs ==================== -->
+
+		<!-- Eadric-Male Welcome -->
+		<string id="LTE01000" text="早安，先生！能歡迎您光臨我這簡陋的小攤，實在是我的榮幸。" />
+		<string id="LTE01001" text="您好，我的好先生！歡迎您隨意翻閱我這裡的文學珍寶。" />
+		<string id="LTE01002" text="幸會，我的朋友！很高興歡迎您前來欣賞這片大地上最精美的藏書。" />
+		<string id="LTE01003" text="向您致敬，高貴的先生！誠摯歡迎您來探索我這些豐富的藏書。" />
+		<string id="LTE01004" text="歡迎光臨，好先生！能讓您翻閱我精選的典籍，是我莫大的榮幸。" />
+		<string id="LTE01005" text="您好，親切的先生！歡迎來到我這簡陋的小攤，知識與奇妙正在這裡等候著您。" />
+		<string id="LTE01006" text="日安，我的好朋友！歡迎您盡情享受我這些書所帶來的知識與樂趣。" />
+		<string id="LTE01007" text="向您問安，我尊貴的主顧！能歡迎您欣賞我收藏的優秀文學作品，是我的榮幸。" />
+		<string id="LTE01008" text="幸會，好先生！歡迎您來探索等候著您的文學樂趣。" />
+		<string id="LTE01009" text="您好，親愛的先生！能歡迎您光臨小攤，我深感榮幸，在這裡您將找到豐富的知識與智慧。" />
+
+		<!-- Eadric-Female Welcome -->
+		<string id="LTE01010" text="早安，夫人！能歡迎您光臨我這簡陋的小攤，實在是我的榮幸。" />
+		<string id="LTE01011" text="您好，美麗的女士！歡迎您隨意翻閱我這裡的文學珍寶。" />
+		<string id="LTE01012" text="幸會，我的女士！很高興歡迎您前來欣賞這片大地上最精美的藏書。" />
+		<string id="LTE01013" text="向您致敬，高貴的夫人！誠摯歡迎您來探索我這些豐富的藏書。" />
+		<string id="LTE01014" text="歡迎光臨，美麗的姑娘！能讓您翻閱我精選的典籍，是我莫大的榮幸。" />
+		<string id="LTE01015" text="您好，親切的女士！歡迎來到我這簡陋的小攤，知識與奇妙正在這裡等候著您。" />
+		<string id="LTE01016" text="日安，親愛的女士！歡迎您盡情享受我這些書所帶來的知識與樂趣。" />
+		<string id="LTE01017" text="向您問安，我尊貴的女主顧！能歡迎您欣賞我收藏的優秀文學作品，是我的榮幸。" />
+		<string id="LTE01018" text="幸會，美麗的小姐！歡迎您來探索等候著您的文學樂趣。" />
+		<string id="LTE01019" text="您好，親愛的女士！能歡迎您光臨小攤，我深感榮幸，在這裡您將找到豐富的知識與智慧。" />
+
+		<!-- Ingeborg-Male Welcome -->
+		<string id="LTE01020" text="歡迎光臨，好先生！您對騎士精神的書有興趣嗎？我相信它和您這樣英俊的騎士再相配不過了。" />
+		<string id="LTE01021" text="您好，大人！您的到來讓我的一天比太陽還要明亮。" />
+		<string id="LTE01022" text="我的好先生，今天想必是星辰相會的好日子，才讓我有幸遇見像您這樣英勇的男子。" />
+		<string id="LTE01023" text="能見到您的這一天真是有福，大人。今天有什麼能為您效勞的嗎？" />
+		<string id="LTE01024" text="日安，親切的先生！要是我書裡的文字能像您的笑容一樣迷人就好了。" />
+		<string id="LTE01025" text="能看到一位如此有品味、有涵養的男士翻閱我這小小的藏書，真是令人愉快。" />
+		<string id="LTE01026" text="大人，您一定是位學者，因為只有才智過人的男子，才能像您這樣欣賞我這些書的美。" />
+		<string id="LTE01027" text="人們說知識就是力量，但我倒認為，真正的力量在於能有您這樣英俊的紳士相伴。" />
+		<string id="LTE01028" text="大人，我得承認，我已經等待像您這樣出眾的男子光臨我這間簡陋的書店好一段時間了。" />
+		<string id="LTE01029" text="您一定是位眼光獨到的男子，才能找到我這世界的小小一隅。不如讓我推薦一本談宮廷愛情藝術的書，好配上您浪漫的天性？" />
+
+		<!-- Ingeborg-Female Welcome -->
+		<string id="LTE01030" text="歡迎光臨，美麗的女士！您的美貌與魅力讓我這簡陋的書店蓬蓽生輝。" />
+		<string id="LTE01031" text="能為一位如此高雅端莊的女士服務，是我的榮幸。不如讓我推薦一本談宮廷愛情藝術的書，好配上您浪漫的天性？" />
+		<string id="LTE01032" text="我的女士，您的光彩實在令我目眩神迷。請讓我幫您找到一本配得上您才華的完美好書。" />
+		<string id="LTE01033" text="像您這樣品味不凡的女士實在難得一見。我迫不及待想讓您看看我收藏的珍寶。" />
+		<string id="LTE01034" text="能在我的書店見到您這般身分的女士，真是令人欣喜！請讓我為您介紹這片大地上最好的一些文學作品。" />
+		<string id="LTE01035" text="我的女士，您的到來就像一陣清新的微風。不知您是否對詩集有興趣，好配上您如詩般的美麗？" />
+		<string id="LTE01036" text="我從未見過像您這般優雅高貴的女士。能幫您找到一本配得上您涵養的完美好書，將是我的榮幸。" />
+		<string id="LTE01037" text="看得出來，您是位極具才智與智慧的女士。不如讓我推薦一部哲學或神學的鉅著，好配上您敏銳的頭腦？" />
+		<string id="LTE01038" text="我的女士，我實在無法不被您的魅力與風采所吸引。請讓我在這趟文學之旅中為您引路。" />
+		<string id="LTE01039" text="能在我這簡陋的書店見到如此美麗又聰慧的女士，真是令人愉快。不如讓我推薦一本史書，好配上您的學識與智慧？" />
+
+		<!-- Ahsan-Male Welcome -->
+		<string id="LTE01040" text="你想幹嘛，無賴？有話快說，我可有更要緊的事，沒空聽你胡扯。" />
+		<string id="LTE01041" text="是誰打擾我休息？快說你有什麼事，不然就滾，免得我放狗咬你。" />
+		<string id="LTE01042" text="什麼風把你吹到我這小店來了，窮鬼？要是你想做買賣，先說清楚，我一律先收錢。" />
+		<string id="LTE01043" text="有話直說，我對那些拿廢話浪費我時間的人可沒耐心。你想要什麼？" />
+		<string id="LTE01044" text="你在找什麼，旅人？快說，我的耐性可是一刻比一刻少。" />
+		<string id="LTE01045" text="你好，陌生人。找我有什麼事？長話短說，我現在沒心情招呼人。" />
+		<string id="LTE01046" text="誰敢打擾我的清靜？有話就說，不然就讓我自己靜一靜。" />
+		<string id="LTE01047" text="什麼風把你吹到我門前來了，蠢貨？快說你有什麼事，不然我就叫衛兵把你轟出去。" />
+		<string id="LTE01048" text="幸會，旅人。說明你的來意，不然就趕快上路。我對到處亂晃的閒人可沒耐心。" />
+		<string id="LTE01049" text="你想幹嘛，鄉巴佬？我沒心情跟你客套。有話快說，說完快走。" />
+
+		<!-- Ahsan-Female Welcome -->
+		<string id="LTE01050" text="你想幹嘛，娘們？有話快說，我可沒時間閒聊。" />
+		<string id="LTE01051" text="你算哪根蔥，也敢來打擾我？快說你有什麼事，不然後果自負。" />
+		<string id="LTE01052" text="什麼風把你吹到我門前來了，小姑娘？要是你想做買賣，就準備好付個公道價。" />
+		<string id="LTE01053" text="有話直說，我對那些嘮嘮叨叨的人可沒耐心。你到底想要什麼？" />
+		<string id="LTE01054" text="你在找什麼，女人？快說，我還有更重要的事要處理。" />
+		<string id="LTE01055" text="你好，女士。找我有什麼事？長話短說，我的時間可寶貴得很。" />
+		<string id="LTE01056" text="誰敢打擾我的清靜？有話就說，不然就走你的路。" />
+		<string id="LTE01057" text="什麼風把你吹來的，丫頭？說明你的來意，不然就等著承受我的怒火。" />
+		<string id="LTE01058" text="幸會，旅人。你在找什麼？有話快說，說完快走。" />
+		<string id="LTE01059" text="你想幹嘛，蕩婦？我沒時間陪你玩把戲。快說你有什麼事，說完就滾。" />
+
+		<!-- Eadric-Male Bye -->
+		<string id="LTE01060" text="再會了，好先生！感謝您大駕光臨我的小攤。" />
+		<string id="LTE01061" text="再見了，我的朋友！願您從我書中得到的知識能讓您的人生更加豐富。" />
+		<string id="LTE01062" text="再會了，親愛的先生！能在您求知的路上幫上忙，是我的榮幸。" />
+		<string id="LTE01063" text="一路順風，高貴的先生！在此向您道別，盼望很快能再見到您。" />
+		<string id="LTE01064" text="再會了，我的好先生！感謝您的惠顧，祝您旅途平安。" />
+		<string id="LTE01065" text="願全能者賜福於您，我的朋友！再會了，祝您閱讀愉快。" />
+		<string id="LTE01066" text="珍重再見，親切的先生！願您買下的書能為您帶來許多樂趣與啟發。" />
+		<string id="LTE01067" text="願您對知識的渴望永不止息，親愛的先生！再會了，願您找到您所追尋的。" />
+		<string id="LTE01068" text="再會了，我尊貴的主顧！能為您服務，並與您分享我對書籍的熱愛，是我的榮幸。" />
+		<string id="LTE01069" text="再見了，親愛的先生！在此向您道別，盼望我的書能為您帶來許多快樂與學習的時光。" />
+
+		<!-- Eadric-Female Bye -->
+		<string id="LTE01070" text="再會了，美麗的女士！感謝您大駕光臨我的小攤。" />
+		<string id="LTE01071" text="再見了，親愛的夫人！願您從我書中得到的知識能讓您的人生更加豐富。" />
+		<string id="LTE01072" text="再會了，我尊貴的女主顧！能在您求知的路上幫上忙，是我的榮幸。" />
+		<string id="LTE01073" text="一路順風，高貴的女士！在此向您道別，盼望很快能再見到您。" />
+		<string id="LTE01074" text="再會了，親切的女士！感謝您的惠顧，祝您旅途平安。" />
+		<string id="LTE01075" text="願全能者賜福於您，親愛的女士！再會了，祝您閱讀愉快。" />
+		<string id="LTE01076" text="珍重再見，美麗的姑娘！願您買下的書能為您帶來許多樂趣與啟發。" />
+		<string id="LTE01077" text="願您對知識的渴望永不止息，親愛的女士！再會了，願您找到您所追尋的。" />
+		<string id="LTE01078" text="再會了，親愛的女士！能為您服務，並與您分享我對書籍的熱愛，是我的榮幸。" />
+		<string id="LTE01079" text="再見了，我尊貴的女主顧！在此向您道別，盼望我的書能為您帶來許多快樂與學習的時光。" />
+
+		<!-- Ingeborg-Male Bye -->
+		<string id="LTE01080" text="再會了，好先生！希望您很快再來看我，好讓我們繼續暢談文學與浪漫。" />
+		<string id="LTE01081" text="後會有期，大人。願您的心中充滿喜悅，就如您的腦中充滿知識一般。" />
+		<string id="LTE01082" text="能為您服務真是愉快，我英勇的騎士。我會期待您再次光臨我這簡陋書店的那一天。" />
+		<string id="LTE01083" text="在此向您道別，大人。願您的旅程就像您熱切翻閱的書頁一樣光明而充實。" />
+		<string id="LTE01084" text="下次見了，我的好先生。願您從我書中汲取的知識，能在您所有的事業上助您一臂之力。" />
+		<string id="LTE01085" text="再會了，大人。請記得，我的書店永遠為您這樣有品味、有涵養的男士敞開大門。" />
+		<string id="LTE01086" text="能為您這般身分與風度的男士服務，是我的榮幸。願您旅途平安，也願我書中的字句讓您的思想日益開闊。" />
+		<string id="LTE01087" text="後會有期，大人。願我書中的美與智慧，永遠是您靈感的泉源。" />
+		<string id="LTE01088" text="我會想念您迷人的陪伴，親愛的先生。願您從我書中學到的道理，在您的人生旅途上一路相伴。" />
+		<string id="LTE01089" text="再會了，大人。請您知道，您在這裡的身影會留在我心中，就像我花園裡玫瑰的芬芳般久久不散。" />
+
+		<!-- Ingeborg-Female Bye -->
+		<string id="LTE01090" text="再會了，美麗的女士！願您挑選的書頁，就像您的容顏一樣富有啟發又美麗動人。" />
+		<string id="LTE01091" text="後會有期，我的女士。願您從我書中獲得的知識，讓您本已閃耀的才智更加出眾。" />
+		<string id="LTE01092" text="能為如此優雅高貴的女士服務，真是愉快。願人生的旅程帶給您的喜悅，就如您的到來帶給我的一樣多。" />
+		<string id="LTE01093" text="在此向您道別，我的女士。願我書中的浪漫與熱情，激勵您追求更深的愛與奉獻。" />
+		<string id="LTE01094" text="下次見了，親愛的女士。願我書中的字句繼續點燃您的創意與靈感之火。" />
+		<string id="LTE01095" text="再會了，美麗的姑娘。請記得，我的書店永遠為您這樣美麗又有眼光的女士敞開大門。" />
+		<string id="LTE01096" text="能為您服務是我的榮幸，我的女士。願我書中的教誨以更深的智慧與洞見，引領您走過人生的旅程。" />
+		<string id="LTE01097" text="後會有期，我的女士。願我書中的知識與美，永遠是您人生與追求的靈感泉源。" />
+		<string id="LTE01098" text="我會想念您迷人的陪伴，親愛的女士。願我們談話的回憶與我書中的知識，永遠帶給您慰藉。" />
+		<string id="LTE01099" text="再會了，我的女士。請您知道，您在這裡的美麗與光彩會留在我心中，就像夜空中閃耀的星光……" />
+
+		<!-- Ahsan-Male/Female Bye -->
+		<string id="LTE01100" text="馬上從我眼前消失，你這隻討人厭的老鼠！" />
+		<string id="LTE01101" text="滾開，你這個卑鄙下流的無賴！" />
+		<string id="LTE01102" text="願魔鬼趕快把你抓走，越快越好！" />
+		<string id="LTE01103" text="慢走不送，但別再來我的店了！" />
+		<string id="LTE01104" text="立刻離開，永遠別再踏進我的門！" />
+		<string id="LTE01105" text="趕緊走人，別等我先拂袖而去。" />
+		<string id="LTE01106" text="跟你待在一起越來越煩了，滾吧，快滾！" />
+		<string id="LTE01107" text="從我眼前消失，別等我叫衛兵來把你轟出去！" />
+		<string id="LTE01108" text="願你的路途漫長又艱辛，讓你永遠不得安歇！" />
+		<string id="LTE01109" text="我才不管你要去哪裡，只要離我越遠越好！" />
+
+		<!-- Dialog-Other lines -->
+		<string id="LTE01200" text="我想看看你有些什麼" />
+		<string id="LTE01201" text="我暫時不需要別的了。再見。" />
+		<string id="LTE01202" text="很高興跟您做生意。[ib:hip][rb:positive][rf:happy]" />
+		<string id="LTE01203" text="您需要的都找到了嗎？[ib:hip][rb:positive][rf:happy]" />
+		<string id="LTE01204" text="滿意了吧？[ib:hip][rb:negative][if:angry]" />
+		<string id="LTE01205" text="謝謝！" />
+		<string id="LTE01206" text="還有什麼能為您效勞的嗎？[ib:confident][if:convo_calm_friendly]" />
+		<string id="LTE01207" text="還需要什麼嗎？[ib:confident][if:convo_calm_friendly]" />
+		<string id="LTE01208" text="還有什麼事？[ib:hip][if:angry]" />
+		<string id="LTE01209" text="錢不夠……" />
+		<string id="LTE01210" text="已購買：" />
+		<string id="LTE01211" text="已售出：" />
+
+		<!-- Dialog-Tavern Keeper -->
+		<string id="LTE01300" text="有啊，最近才見過{VENDOR.FIRSTNAME}。去城裡四處找找吧。" />
+		<string id="LTE01301" text="我聽說你可以在{SETTLEMENT}找到你要找的東西。" />
+		<string id="LTE01302" text="沒有，最近沒聽說。" />
+		<string id="LTE01303" text="謝了！" />
+		<string id="LTE01304" text="還有別的事嗎？" />
+		<string id="LTE01305" text="老闆，我想買本書，不知道您最近有沒有在附近見過書商？最近有沒有書商來過您的店裡？" />
+		<string id="LTE01306" text="請問，好心的先生，您最近有沒有聽說附近有書商在走動？我正在找些新的讀物。" />
+		<string id="LTE01307" text="打擾了，先生。我是個愛書人，正在找書商。最近有沒有這樣的商人來過您的店裡？" />
+		<string id="LTE01308" text="老兄，我需要一本書，希望能在附近找到書商。這幾天您有沒有見過這類生意人？" />
+		<string id="LTE01309" text="您好，先生。我是個愛書之人，想買本書。您知不知道最近有哪位書商經過這裡？" />
+		<string id="LTE01310" text="您好，先生。我正在尋找一本書，想請問您最近是否遇過書商。若您能幫我這個忙，我將感激不盡。" />
+		<string id="LTE01311" text="先生，能否請您告訴我，最近這一帶有沒有人見過書商？我很想再為我的收藏添幾本書。" />
+		<string id="LTE01312" text="日安，先生。我需要一本書，希望能在附近找到書商。您有沒有聽說這一帶有書商在走動？" />
+		<string id="LTE01313" text="先生，願您一切安好。我是個熱愛閱讀的人，正在尋找書商。最近有沒有這樣的人來過您的店裡？" />
+		<string id="LTE01314" text="打擾了，先生。我是一名學者，需要些新的讀物。您最近有沒有在這一帶見過書商？" />
+		<string id="LTE01315" text="老闆，我想擴充我的藏書，想請問您最近是否在附近見過書商。任何消息都將對我大有幫助。" />
+		<string id="LTE01316" text="你知道有誰能幫我精進技能嗎？" />
+		<string id="LTE01317" text="不妨去這些地方找找：" />
+		<string id="LTE01318" text="太好了！我會在地圖上標記起來。" />
+
+		<!-- Smithing parts -->
+		<string id="LTE01400" text="{WEAPON_ICON} 我想學習如何打造新的武器部件。你能教我嗎？" />
+		<string id="LTE01401" text="今天不行，明天再來吧。" />
+		<string id="LTE01402" text="好。還有別的事嗎？" />
+		<string id="LTE01404" text="選擇要學習的部件：" />
+		<string id="LTE01405" text="已選擇：{PIECE_NAME}：{PRICE}{GOLD_ICON}" />
+		<string id="LTE01406" text="你的錢不夠。總價：{PRICE}{GOLD_ICON}" />
+
+		<!-- Scholars -->
+		<string id="LTE01500" text="「百戳」女士" />
+		<string id="LTE01501" text="「刀鋒佳人」女士" />
+		<string id="LTE01502" text="擊劍魔" />
+		<string id="LTE01503" text="鐵甲客" />
+		<string id="LTE01504" text="「千瘡百孔」瓦特尼克" />
+		<string id="LTE01505" text="「蠻牛」西蒙" />
+		<string id="LTE01506" text="蛇臉" />
+		<string id="LTE01507" text="「一劈兩半」布洛格" />
+		<string id="LTE01508" text="「百刺」女士" />
+		<string id="LTE01509" text="矛格莎" />
+		<string id="LTE01510" text="「穿刺者」英格瓦" />
+		<string id="LTE01511" text="「冷酷」格魯姆什" />
+		<string id="LTE01512" text="「神弓」羅賓爵士" />
+		<string id="LTE01513" text="「鷹眼」蘿娜" />
+		<string id="LTE01514" text="女射手爵士" />
+		<string id="LTE01515" text="馬利克・卡烏斯" />
+		<string id="LTE01516" text="「多克森」皮克" />
+		<string id="LTE01517" text="「迅捷」麥爾坎" />
+		<string id="LTE01518" text="「獵人」伊芙" />
+		<string id="LTE01519" text="「站錯邊」約翰" />
+		<string id="LTE01520" text="馬維克・沃格・卡切爾" />
+		<string id="LTE01521" text="「左撇子」本祖爾" />
+		<string id="LTE01522" text="鴉眼" />
+		<string id="LTE01523" text="李大師" />
+		<string id="LTE01524" text="「馬鐙苦手」女士" />
+		<string id="LTE01525" text="「馬術家」愛德華爵士" />
+		<string id="LTE01526" text="「鐵馬」伊莎貝拉女士" />
+		<string id="LTE01527" text="黑騎手" />
+		<string id="LTE01528" text="「好意」格斯圖羅" />
+		<string id="LTE01529" text="「狂奔不止」女士" />
+		<string id="LTE01530" text="秀肌頓女伯爵" />
+		<string id="LTE01531" text="「巨石」艾德" />
+		<string id="LTE01532" text="「彎鐵」約翰" />
+		<string id="LTE01533" text="愛德華・嗅石" />
+		<string id="LTE01534" text="亨利・爐心" />
+		<string id="LTE01535" text="尼可拉斯・砧生" />
+		<string id="LTE01536" text="「好奇」蘿拉" />
+		<string id="LTE01537" text="追蹤者齊吉" />
+		<string id="LTE01538" text="沼澤人斯特魯克" />
+		<string id="LTE01539" text="「綠人」伊克斯塔姆涅托夫" />
+		<string id="LTE01540" text="「魯蛇」沃瓦" />
+		<string id="LTE01541" text="「馬臉」沃拉爾" />
+		<string id="LTE01542" text="「通吃」葛爾達" />
+		<string id="LTE01543" text="「水窪後頭」根" />
+		<string id="LTE01544" text="「血手」卡薩普" />
+		<string id="LTE01545" text="「偷童賊」尼可" />
+		<string id="LTE01546" text="「搶茅坑」艾力克斯" />
+		<string id="LTE01547" text="「解放者」烏斯基" />
+		<string id="LTE01548" text="「可人」女士" />
+		<string id="LTE01549" text="「百媚」女士" />
+		<string id="LTE01550" text="魅兒女爵士" />
+		<string id="LTE01551" text="戀琳女男爵" />
+		<string id="LTE01552" text="咩斯洛特爵士" />
+		<string id="LTE01553" text="希大人" />
+		<string id="LTE01554" text="提圖斯・瓦萊里烏斯" />
+		<string id="LTE01555" text="格林齊大師" />
+		<string id="LTE01556" text="「精明」西蒙" />
+		<string id="LTE01557" text="「數錢的」摩西" />
+		<string id="LTE01558" text="「珠寶商」雅各" />
+		<string id="LTE01559" text="「金掌」穆斯塔法" />
+		<string id="LTE01560" text="東東・西勒紐斯" />
+		<string id="LTE01561" text="「騾子」佩特羅" />
+		<string id="LTE01562" text="雷金納德・德・康希爾" />
+		<string id="LTE01563" text="「處變不驚」烏蘇拉" />
+		<string id="LTE01564" text="「掃帚」維特" />
+		<string id="LTE01565" text="補藥夫人托妮西亞" />
+		<string id="LTE01566" text="水銀男爵" />
+		<string id="LTE01567" text="「偉大的」帕拉塞爾蘇斯大公" />
+		<string id="LTE01568" text="「磨齒輪」希爾達" />
+		<string id="LTE01569" text="「建築匠」傑森" />
+		<string id="LTE01570" text="營造師塞德里克" />
+		<string id="LTE01571" text="「造船匠」艾瑞克" />
+
+		<!-- Book Stash / errors -->
+		<string id="LTE_IVxtevp" text="關閉" />
+		<string id="LTE_HlSCpug" text="智力：{INT_VALUE}" />
+		<string id="LTE_57VY1h0" text="LT_Education 錯誤：沒有書籍！請重新安裝本模組，並使用 7-Zip 解壓縮檔案。" />
+		<string id="LTE_WH3jEnq" text="LT_Education：無法建立書商……請重新安裝本模組。" />
+		<string id="LTE_Ij9eNgV" text="LTEducation：無法呼叫 OpenPart，遊戲版本不相容！" />
+		<string id="LTE_PVfXG2f" text="LT_Education：將本模組載入目前遊戲時發生錯誤。" />
+	</strings>
+</base>

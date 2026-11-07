@@ -66,7 +66,7 @@ namespace LT.Helpers
             try
             {
                 List<Settlement> settlements = Settlement.FindAll((Settlement s) => s.IsTown || s.IsCastle || s.IsVillage).ToList<Settlement>();
-                closestSettlement = settlements.MinBy((Settlement s) => heroParty.GetPosition().DistanceSquared(s.GetPosition()));
+                closestSettlement = settlements.MinBy((Settlement s) => heroParty.GetPosition2D.DistanceSquared(s.GetPosition2D));
             }
             catch (Exception ex)
             {
@@ -139,7 +139,8 @@ namespace LT.Helpers
                     num++;
                 }
             }
-            int num2 = MBRandom.RandomInt(0, num - 1);
+            if (num == 0) return null;
+            int num2 = MBRandom.RandomInt(num);
             foreach (Settlement settlement2 in Campaign.Current.Settlements)
             {
                 if (settlement2.IsTown)

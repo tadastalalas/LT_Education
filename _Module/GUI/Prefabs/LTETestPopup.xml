@@ -1,0 +1,329 @@
+<Prefab>
+	<Constants>
+	</Constants>
+
+	<Window>
+		<Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"  Sprite="BlankWhiteSquare_9" Color="#00000088">
+		
+			<Children>
+			
+				<!--Done Button-->
+				<Standard.PopupCloseButton HorizontalAlignment="Center" Command.Click="ExecuteClose" VerticalAlignment="Center" MarginTop="840" Parameter.ButtonText="Close" Parameter.InputKeyDataSource="{DoneInputKey}" />
+
+				<DimensionSyncWidget Id="SingleQueryPopupParent" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="810" SuggestedHeight="800" HorizontalAlignment="Center" VerticalAlignment="Center" 
+					PositionYOffset="0" DimensionToSync="Vertical">
+
+					<Children>
+
+						<!-- background -->
+						<Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" SuggestedWidth="810" SuggestedHeight="650" 
+								HorizontalAlignment="Center" VerticalAlignment="Top" Sprite="StdAssets\Popup\canvas" />
+					
+						<Widget MarginLeft="70" MarginTop="60" DoNotPassEventsToChildren="true" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="136" SuggestedHeight="122" 
+								HorizontalAlignment="Left"  UpdateChildrenStates="false" GamepadNavigationIndex="0" IsEnabled="true" Sprite="SPGeneral\OverlayPopup\portrait_slot"> 
+
+							<Children>
+
+								<!-- banner -->
+								<MaskedTextureWidget DataSource="{Banner}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="50" SuggestedHeight="70"
+										HorizontalAlignment="Left" VerticalAlignment="Top" PositionXOffset="83" PositionYOffset="7"
+										Brush="Clan.TornBanner" AdditionalArgs="@AdditionalArgs" ImageId="@Id" ImageTypeCode="@ImageTypeCode" 
+										OverlayTextureScale="1"/>
+
+								<!-- hero img -->
+								<ImageIdentifierWidget DataSource="{ImageIdentifier}" WidthSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+									HeightSizePolicy="Fixed" SuggestedWidth="130" SuggestedHeight="100" PositionXOffset="0" PositionYOffset="-14"
+									AdditionalArgs="@AdditionalArgs" ImageId="@Id" ImageTypeCode="@ImageTypeCode" />
+							
+								<!-- hero name -->
+								<RichTextWidget HeightSizePolicy="StretchToParent" WidthSizePolicy="StretchToParent" Text="@HeroName" Brush="ChatLog.HideShowText" Brush.FontSize="14" Brush.TextVerticalAlignment="Top" PositionYOffset="115"/>
+								
+								<!-- INT -->
+								<RichTextWidget HeightSizePolicy="StretchToParent" WidthSizePolicy="StretchToParent" Text="@INTText" Brush="ChatLog.HideShowText" Brush.FontSize="12" Brush.FontColor="#AAAAAAFF" PositionXOffset="-48" PositionYOffset="-44"/>
+
+							</Children>
+						 </Widget> 
+
+
+						<!-- not reading anything currently / learning to read -->
+						<ListPanel WidthSizePolicy="Fixed" SuggestedWidth="420" HeightSizePolicy="CoverChildren" UpdateChildrenStates="true" 
+								MarginLeft="250" MarginRight="70" MarginTop="110"
+								IsActive="false"  IsVisible="@NotReadingBook">
+							<Children>
+
+								<Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="2"
+									VerticalAlignment="Center" HorizontalAlignment="Left" MarginLeft="10"
+									Sprite="SPGeneral\SPOptions\options_divider_flat" HorizontalFlip="true"/>
+
+								<TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+									Brush="CharacterDeveloper.RightPanel.Title.Text" Brush.FontSize="20" Text="@StatusLineText" MarginLeft="20" /> 
+
+								<Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="2"
+									VerticalAlignment="Center" HorizontalAlignment="Left" MarginLeft="15"
+									Sprite="SPGeneral\SPOptions\options_divider_flat" /> 
+
+							</Children>
+						</ListPanel>
+
+
+						<!-- reading: book name -->
+						<ListPanel WidthSizePolicy="Fixed" SuggestedWidth="420" HeightSizePolicy="CoverChildren" UpdateChildrenStates="true" 
+								MarginLeft="230" MarginRight="70" MarginTop="90"
+								IsActive="false"  IsVisible="@ReadingBook">
+							<Children>
+
+								<Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="2"
+									VerticalAlignment="Center" HorizontalAlignment="Left" MarginLeft="20"
+									Sprite="SPGeneral\SPOptions\options_divider_flat" HorizontalFlip="true"/>
+
+								<TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+									Brush="CharacterDeveloper.RightPanel.Title.Text" Brush.FontSize="20" Text="@ReadingText" MarginLeft="20" /> 
+
+								<Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="2"
+									VerticalAlignment="Center" HorizontalAlignment="Left" MarginLeft="15"
+									Sprite="SPGeneral\SPOptions\options_divider_flat" /> 
+
+							</Children>
+						</ListPanel>
+
+
+
+
+						<ListPanel MarginRight="70" MarginTop="120" DoNotPassEventsToChildren="false" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="520" SuggestedHeight="170" 
+								HorizontalAlignment="Right"  UpdateChildrenStates="false" GamepadNavigationIndex="0" IsEnabled="true" StackLayout.LayoutMethod="HorizontalLeftToRight" DoNotAcceptEvents="false">
+
+							<Children>	
+								
+								<!-- book name -->
+								<RichTextWidget HeightSizePolicy="CoverChildren" WidthSizePolicy="StretchToParent" Text="@StatusLineText" Brush="BoardGame.Instructions.Text"  IsVisible="@ReadingBook" />
+							
+								<!-- stop reading X button -->
+								<ButtonWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedHeight="40" MarginLeft="10"
+									SuggestedWidth="40" PositionYOffset="-10"
+									Brush="Attribute.Close.Button" Command.Click="StopReadingBook"  IsVisible="@ReadingBook">
+									<Children>
+										<HintWidget DataSource="{StopReadingBookHint}" WidthSizePolicy="StretchToParent"
+											HeightSizePolicy="CoverChildren" HorizontalAlignment="Center"
+											Command.HoverBegin="ExecuteBeginHint" Command.HoverEnd="ExecuteEndHint" />
+									</Children>
+								</ButtonWidget> 
+
+							</Children>				 
+
+						</ListPanel>
+
+
+
+						<ListPanel WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" MarginTop="200" DoNotAcceptEvents="false" DoNotPassEventsToChildren="false">
+							<Children>
+
+								<EncyclopediaTroopScrollablePanel DataSource="{}" HeightSizePolicy="StretchToParent"
+																WidthSizePolicy="StretchToParent" InnerPanel="RightSideRect\InnerPanel"
+																ClipRect="RightSideRect" VerticalAlignment="Center"
+																HorizontalAlignment="Center"
+																HorizontalScrollbar="..\RightSideHorizontalScrollbar"
+																VerticalScrollbar="..\RightSideVerticalScrollbar" PanWithMouseEnabled="true"
+																AutoHideScrollBars="true" MarginBottom="0">
+									<Children>
+
+										<Widget Id="RightSideRect" HeightSizePolicy="StretchToParent" WidthSizePolicy="StretchToParent"
+												HorizontalAlignment="Center" DoNotAcceptEvents="false" ClipContents="true" MarginBottom="0">
+											<Children>
+												<Widget Id="InnerPanel" HeightSizePolicy="CoverChildren" WidthSizePolicy="CoverChildren"
+														HorizontalAlignment="Center" IsHidden="@HasErrors" MarginBottom="0">
+													<Children>
+														<Widget HorizontalAlignment="Center" HeightSizePolicy="CoverChildren" WidthSizePolicy="CoverChildren"
+																MarginTop="10" MarginBottom="90">
+															<Children>
+
+																<ListPanel WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren" SuggestedWidth="720" 
+																		StackLayout.LayoutMethod="VerticalTopToBottom" DoNotAcceptEvents="false" MarginTop="20"
+																		MarginBottom="0">
+																	<Children>
+
+																		<ListPanel WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" UpdateChildrenStates="true" IsActive="false">
+																			<Children>
+																				<TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+																					Brush="CharacterDeveloper.RightPanel.Title.Text" Brush.FontSize="30" Text="@BooksText" MarginLeft="20" /> 
+																				
+																				<ImageWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="2"
+																					VerticalAlignment="Center" HorizontalAlignment="Left" MarginLeft="15"
+																					Brush="SPOptions.CollapserLine" />
+																			</Children>
+																		</ListPanel>
+
+																		<Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="100" SuggestedHeight="74" Sprite="BlankWhiteSquare_9" >
+																			<Children>
+																				<Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="General\Icons\ShopIcons\oil_press_large"  />
+																			</Children>
+																		</Widget>
+
+																		<Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="100" SuggestedHeight="74" Sprite="General\Icons\ShopIcons\silver_smithy_large"  />
+
+																		<!-- Books --> <!--
+																		<GridWidget Id="BooksInfo" DataSource="{BooksInfo}" WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" PositionXOffset="0" DefaultCellWidth="720" DefaultCellHeight="60" 
+																				HorizontalAlignment="Left" ColumnCount="1" LayoutImp.HorizontalLayoutMethod="LeftToRight">
+																		<ItemTemplate>
+
+
+																			<Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" MarginTop="0">
+																			<Children>
+
+
+																				<ImageIdentifierWidget DataSource="{Visual}" WidthSizePolicy="Fixed" HorizontalAlignment="Left" VerticalAlignment="Center"
+																					HeightSizePolicy="Fixed" SuggestedWidth="130" SuggestedHeight="100" PositionXOffset="0" PositionYOffset="-10"
+																					AdditionalArgs="@AdditionalArgs" ImageId="@Id" ImageTypeCode="@ImageTypeCode" />
+
+																				<RichTextWidget WidthSizePolicy="Fixed" SuggestedWidth="360" HeightSizePolicy="CoverChildren" PositionXOffset="120" PositionYOffset="37"
+																																	HorizontalAlignment="Left" Brush="Clan.Leader.Text" Brush.FontSize="22" Brush.TextHorizontalAlignment="Left" Text="@Name" >
+																					<Children>
+																						<HintWidget DataSource="{BookHint}" WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" Command.HoverBegin="ExecuteBeginHint" Command.HoverEnd="ExecuteEndHint" />
+																					</Children>
+																				</RichTextWidget>
+
+
+																				<RichTextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" PositionXOffset="520" PositionYOffset="37"
+																																	HorizontalAlignment="Left" Brush="Clan.Leader.Text" Brush.FontSize="22" Text="@ReadProgress" />
+
+																				<Widget WidthSizePolicy="Fixed"  HeightSizePolicy="Fixed" SuggestedWidth="25" SuggestedHeight="25" PositionXOffset="580" PositionYOffset="37" Sprite="@SkillSprite" >
+																					<Children>
+																						<HintWidget DataSource="{SkillHint}" WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" Command.HoverBegin="ExecuteBeginHint" Command.HoverEnd="ExecuteEndHint" />
+																					</Children>
+																				</Widget>
+
+																				<RichTextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" PositionXOffset="608" PositionYOffset="41"
+																																	HorizontalAlignment="Left" Brush="Clan.Leader.Text" Brush.FontSize="16"  Text="@SkillValue" />
+
+																				<ButtonWidget DataSource="{ReadButton}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedHeight="20" SuggestedWidth="30" MarginBottom="0" PositionXOffset="320" PositionYOffset="0"
+																						HorizontalAlignment="Center" VerticalAlignment="Center" Brush="ButtonBrush1" Command.Click="OnPress" IsEnabled="true" UpdateChildrenStates="true" IsVisible="@Show">
+																					<Children>
+																						<RichTextWidget DoNotAcceptEvents="true" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" 
+																								HorizontalAlignment="Center" VerticalAlignment="Center" Brush="OverlayPopup.ButtonText" Brush.FontSize="16" Text="@ButtonName" />
+																					</Children>
+																				</ButtonWidget>
+
+																			</Children>
+																			</Widget>
+																		</ItemTemplate>
+																		</GridWidget>
+
+																		<RichTextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" PositionXOffset="0" PositionYOffset="0" MarginTop="20" IsVisible="@NoBooks"
+																										HorizontalAlignment="Center" Brush="Clan.Leader.Text" Brush.FontSize="22" Brush.TextHorizontalAlignment="Center" Text="@PartyHasNoBooksText" />
+
+
+																		<ListPanel WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren"
+																				UpdateChildrenStates="true" MarginTop="80">
+																			<Children>
+																				<TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+																					Brush="CharacterDeveloper.RightPanel.Title.Text" Brush.FontSize="30" Text="@ScrollsText" MarginLeft="20" />
+																				<ImageWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="2"
+																					VerticalAlignment="Center" HorizontalAlignment="Left" MarginLeft="15"
+																					Brush="SPOptions.CollapserLine" />
+																			</Children>
+																		</ListPanel> -->
+
+																		<!-- Scrolls --> <!--
+																		<GridWidget Id="ScrollsInfo" DataSource="{ScrollsInfo}" WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" PositionXOffset="0" DefaultCellWidth="720" DefaultCellHeight="60" 
+																				HorizontalAlignment="Left" ColumnCount="1" LayoutImp.HorizontalLayoutMethod="LeftToRight">
+																			<ItemTemplate>
+
+																				<Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" MarginTop="0">
+																					<Children>
+
+																						<ImageIdentifierWidget DataSource="{Visual}" WidthSizePolicy="Fixed" HorizontalAlignment="Left" VerticalAlignment="Center"
+																							HeightSizePolicy="Fixed" SuggestedWidth="130" SuggestedHeight="100" PositionXOffset="0" PositionYOffset="-10"
+																							AdditionalArgs="@AdditionalArgs" ImageId="@Id" ImageTypeCode="@ImageTypeCode" />
+
+																						<RichTextWidget WidthSizePolicy="Fixed" SuggestedWidth="360" HeightSizePolicy="CoverChildren" PositionXOffset="120" PositionYOffset="37"
+																																			HorizontalAlignment="Left" Brush="Clan.Leader.Text" Brush.FontSize="22" Brush.TextHorizontalAlignment="Left" Text="@Name" >
+																							<Children>
+																								<HintWidget DataSource="{BookHint}" WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" Command.HoverBegin="ExecuteBeginHint" Command.HoverEnd="ExecuteEndHint" />
+																							</Children>
+																						</RichTextWidget>
+
+																						<RichTextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" PositionXOffset="520" PositionYOffset="37"
+																																			HorizontalAlignment="Left" Brush="Clan.Leader.Text" Brush.FontSize="22" Text="@ReadProgress" />
+
+																						<Widget WidthSizePolicy="Fixed"  HeightSizePolicy="Fixed" SuggestedWidth="25" SuggestedHeight="25" PositionXOffset="580" PositionYOffset="37" Sprite="@SkillSprite" >
+																							<Children>
+																								<HintWidget DataSource="{SkillHint}" WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" Command.HoverBegin="ExecuteBeginHint" Command.HoverEnd="ExecuteEndHint" />
+																							</Children>
+																						</Widget>
+
+																						<RichTextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" PositionXOffset="608" PositionYOffset="41"
+																																			HorizontalAlignment="Left" Brush="Clan.Leader.Text" Brush.FontSize="16"  Text="@SkillValue" />
+
+																						<ButtonWidget DataSource="{ReadButton}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedHeight="20" SuggestedWidth="30" MarginBottom="0" PositionXOffset="320" PositionYOffset="0"
+																								HorizontalAlignment="Center" VerticalAlignment="Center" Brush="ButtonBrush1" Command.Click="OnPress" IsEnabled="true" UpdateChildrenStates="true" IsVisible="@Show">
+																							<Children>
+																								<RichTextWidget DoNotAcceptEvents="true" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" 
+																										HorizontalAlignment="Center" VerticalAlignment="Center" Brush="OverlayPopup.ButtonText" Brush.FontSize="16" Text="@ButtonName" />
+																							</Children>
+																						</ButtonWidget>
+																					</Children>
+																				</Widget>
+																		</ItemTemplate>
+																		</GridWidget> -->
+
+																		<RichTextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" PositionXOffset="0" PositionYOffset="0" MarginTop="20" IsVisible="@NoScrolls"
+																										HorizontalAlignment="Center" Brush="Clan.Leader.Text" Brush.FontSize="22" Brush.TextHorizontalAlignment="Center" Text="@PartyHasNoScrollsText" />
+
+																	</Children>
+																</ListPanel>
+															</Children>
+														</Widget>
+													</Children>
+												</Widget>
+											</Children>
+										</Widget>
+
+									</Children>
+								</EncyclopediaTroopScrollablePanel>
+
+
+								<!-- vertical scroll -->
+								<ScrollbarWidget HeightSizePolicy="StretchToParent" WidthSizePolicy="Fixed" Id="RightSideVerticalScrollbar"
+												SuggestedWidth="30" MinValue="0" MaxValue="100" MarginRight="10" MarginBottom="10"
+												MarginTop="10" AlignmentAxis="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center"
+												Handle="ScrollbarHandle" UpdateChildrenStates="true">
+									<Children>
+										<Widget Id="ScrollbarBed" WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent" SuggestedWidth="4"
+												HorizontalAlignment="Center" Sprite="SPGeneral\SPRecruitment\slider_thin_bed_vertical" />
+										<ImageWidget Id="ScrollbarHandle" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" MinHeight="153"
+													SuggestedWidth="30" SuggestedHeight="150" HorizontalAlignment="Center"
+													Brush="Encyclopedia.Scroll.Handle.Vertical" />
+									</Children>
+								</ScrollbarWidget>
+
+
+							</Children>
+						</ListPanel>
+
+
+						<!-- frame -->
+						<Widget DoNotAcceptEvents="true" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+						        ExtendLeft="25" ExtendTop="25" ExtendRight="25" ExtendBottom="25"
+						        Sprite="CharacterDeveloper\AttributePopup\attribute_popup_frame" />
+
+                        <!--title -->
+        				<Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="490" SuggestedHeight="125" HorizontalAlignment="Center" VerticalAlignment="Top" PositionXOffset="0" PositionYOffset="-105" Sprite="StdAssets\tabbar_popup" IsDisabled="true" VerticalFlip="true">
+							<Children>
+								<RichTextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" VerticalAlignment="Center" PositionYOffset="16" Brush="Recruitment.Popup.Title.Text" Brush.FontSize="30" IsDisabled="true" Text="@WindowTitle" />
+							</Children>
+						</Widget>
+
+						<!--Close Button X -->
+						<ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center"  MarginRight="25" MarginTop="-30">
+							<Children>
+								<ButtonWidget DoNotPassEventsToChildren="true" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+						              SuggestedWidth="84" SuggestedHeight="84" HorizontalAlignment="Center" VerticalAlignment="Center"
+						              MarginLeft="800" MarginBottom="1" Command.Click="ExecuteClose" Brush="Attribute.Close.Button"  IsEnabled="true"/>
+							</Children>
+						</ListPanel>
+
+					</Children>
+				</DimensionSyncWidget>	
+			</Children>
+		</Widget>
+	</Window>
+</Prefab>

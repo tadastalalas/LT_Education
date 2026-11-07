@@ -80,11 +80,16 @@ namespace LT.UI.Extensions
 
             if (settlementNameplateVM.Settlement is not Settlement settlement) return;
 
-            if (LTHelpers.GetPartyScoutingLevel(MobileParty.MainParty) < LT_EducationBehaviour.Instance.ScoutingLevelToSeeScholarIcons) return;
+            if (LTHelpers.GetPartyScoutingLevel(MobileParty.MainParty) < LT_EducationBehaviour.Instance.ScoutingLevelToSeeScholarIcons)
+            {
+                // hide, and don't mark as updated, so icons come back as soon as scouting is high enough
+                HasScholar = false;
+                return;
+            }
 
             HasScholar = false;
 
-            if (LT_EducationBehaviour.Instance.GetScholarIndexbySettlement(settlement) > 0) HasScholar = true;  // scholars
+            if (LT_EducationBehaviour.Instance.GetScholarIndexbySettlement(settlement) > -1) HasScholar = true;  // scholars
          
             if (LT_EducationBehaviour.Instance.IsAnyVendorInTown(settlement)) HasScholar = true;    // vendors
 

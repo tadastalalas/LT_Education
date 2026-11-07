@@ -4,12 +4,13 @@ using TaleWorlds.Core.ViewModelCollection.Information;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using LT_Education;
+using TaleWorlds.Core.ViewModelCollection.ImageIdentifiers;
 
 namespace LT.UI
 {
     public class LTEducationBookVM : ViewModel
     {
-        private ImageIdentifierVM _visual;
+        private ItemImageIdentifierVM _visual;
         private string _name;
         private string _readProgress;
         private string _skillSprite;
@@ -26,7 +27,7 @@ namespace LT.UI
             int skillValue = hero.GetSkillValue(skill);
             string skillSprite= "SPGeneral\\Skills\\gui_skills_icon_" + skill.StringId.ToString().ToLower() + "_tiny";
 
-            this.Visual = new ImageIdentifierVM(new ImageIdentifier(book));
+            this.Visual = new ItemImageIdentifierVM(book);
             this.Name = book.Name.ToString();
             this.ReadProgress = readProgress.ToString()+"%";
             this.SkillSprite = skillSprite;
@@ -68,7 +69,7 @@ namespace LT.UI
 
 
         [DataSourceProperty]
-        public ImageIdentifierVM Visual
+        public ItemImageIdentifierVM Visual
         {
             get => this._visual;
             set

@@ -37,14 +37,8 @@
       </beard_tags> -->
     </face>
     <Traits>
-      <Trait id="BalancedFightingSkills"
-             value="0" />
       <Trait id="Commander"
              value="8" />
-      <Trait id="Politician"
-             value="6" />
-      <Trait id="Manager"
-             value="7" />
       <Trait id="Valor"
              value="1" />
       <Trait id="Honor"
@@ -116,14 +110,8 @@
       </beard_tags> -->
     </face>
     <Traits>
-      <Trait id="BalancedFightingSkills"
-             value="0" />
       <Trait id="Commander"
              value="8" />
-      <Trait id="Politician"
-             value="6" />
-      <Trait id="Manager"
-             value="7" />
       <Trait id="Valor"
              value="1" />
       <Trait id="Honor"
@@ -199,14 +187,8 @@
       </beard_tags> -->
     </face>
     <Traits>
-      <Trait id="BalancedFightingSkills"
-             value="0" />
       <Trait id="Commander"
              value="8" />
-      <Trait id="Politician"
-             value="6" />
-      <Trait id="Manager"
-             value="7" />
       <Trait id="Valor"
              value="-1" />
       <Trait id="Honor"

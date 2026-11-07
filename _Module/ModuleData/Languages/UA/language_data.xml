@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LanguageData id="Українська" name="Українська" subtitle_extension="гф" supported_iso="ua,ukr,ua-ua">
-  <LanguageFile xml_path="UA/UkraineTranslation.xml" />
-  <VoiceFile xml_path="VoicedLines/voiced_lines_en.xml" />
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData id="Українська" name="Українська" subtitle_extension="uk" supported_iso="uk,ukr,uk-ua,ua,ua-ua" under_development="false">
+	<LanguageFile xml_path="UA/std_module_strings_xml_ukr.xml" />
+	<VoiceFile xml_path="VoicedLines/voiced_lines_en.xml" />
 </LanguageData>

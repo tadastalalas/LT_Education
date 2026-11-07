@@ -1,12 +1,7 @@
 ﻿using LT.Logger;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Engine.GauntletUI;
-using TaleWorlds.GauntletUI.Data;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.ScreenSystem;
@@ -24,7 +19,7 @@ namespace LT_Education
                 bool flag = _gauntletLayer != null;
                 if (!flag)
                 {
-                    _gauntletLayer = new GauntletLayer(1000, "GauntletLayer", false);
+                    _gauntletLayer = new GauntletLayer("GauntletLayer", 1000, false);
 
                     bool flag2 = _popupVM == null;
                     if (flag2)
@@ -38,9 +33,10 @@ namespace LT_Education
 
                         _popupVM = new EducationPopupVM(titleTO.ToString(), smallTextTO.ToString(), bigTextTO.ToString(), textOverImageTO.ToString(), spriteName, closeButtonTextTO.ToString());
                     }
-                    _gauntletMovie = (GauntletMovie)_gauntletLayer.LoadMovie("LTEducationBookPopup", _popupVM);
+                    _gauntletMovie = _gauntletLayer.LoadMovie("LTEducationBookPopup", _popupVM);
                     _gauntletLayer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
-                    ScreenManager.TopScreen.AddLayer(_gauntletLayer);
+                    _popupScreen = ScreenManager.TopScreen;
+                    _popupScreen.AddLayer(_gauntletLayer);
                     _gauntletLayer.IsFocusLayer = true;
                     ScreenManager.TrySetFocus(_gauntletLayer);
                     if (_popupVM != null) _popupVM.Refresh();
@@ -54,8 +50,6 @@ namespace LT_Education
 
         public static void DeletePopupVMLayer()
         {
-            ScreenBase topScreen = ScreenManager.TopScreen;
-            
             if (_gauntletLayer != null)
             {
                 _gauntletLayer.InputRestrictions.ResetInputRestrictions();
@@ -65,12 +59,19 @@ namespace LT_Education
                 {
                     _gauntletLayer.ReleaseMovie(_gauntletMovie);
                 }
-                topScreen.RemoveLayer(_gauntletLayer);
+                // remove from the screen the layer was added to, which may no longer be the top screen
+                _popupScreen?.RemoveLayer(_gauntletLayer);
             }
 
+            ResetPopupState();
+        }
+
+        private static void ResetPopupState()
+        {
             _gauntletLayer = null;
             _gauntletMovie = null;
             _popupVM = null;
+            _popupScreen = null;
         }
 
     }

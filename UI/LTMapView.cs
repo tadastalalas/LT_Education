@@ -26,7 +26,7 @@ namespace LT.UI
 
         private LTViewModel? VM { get; set; }
 
-        private GauntletMovie? _gauntletMovie;
+        private GauntletMovieIdentifier? _gauntletMovie;
 
 
         public LTMapView(string id)
@@ -41,15 +41,15 @@ namespace LT.UI
             base.CreateLayout();
             SpriteData spriteData = UIResourceManager.SpriteData;
             TwoDimensionEngineResourceContext resourceContext = UIResourceManager.ResourceContext;
-            ResourceDepot resourceDepot = UIResourceManager.UIResourceDepot;
+            ResourceDepot resourceDepot = UIResourceManager.ResourceDepot;
             _categoryDeveloper = spriteData.SpriteCategories["ui_characterdeveloper"];
             _categoryDeveloper.Load(resourceContext, resourceDepot);
             _categoryEncyclopedia = spriteData.SpriteCategories["ui_encyclopedia"];
             _categoryEncyclopedia.Load(resourceContext, resourceDepot);
             ValueTuple<LTViewModel, string> tuple = GetVM(this.id);
-            this.Layer = new GauntletLayer(1000, "GauntletLayer", false);
+            this.Layer = new GauntletLayer("GauntletLayer", 1000, false);
             this.VM = tuple.Item1;
-            _gauntletMovie = (GauntletMovie)this.Layer.LoadMovie(tuple.Item2, tuple.Item1);
+            _gauntletMovie = this.Layer.LoadMovie(tuple.Item2, tuple.Item1);
             
             //this.VM.SetDoneInputKey(HotKeyManager.GetCategory("GenericPanelGameKeyCategory").GetHotKey("Confirm"));   // does not work :(
 
